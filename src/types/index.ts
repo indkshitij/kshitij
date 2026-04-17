@@ -1,3 +1,5 @@
+import { StaticImageData } from "next/image";
+
 export interface SkillCategory {
   title: string;
   skills: string[];
@@ -26,8 +28,12 @@ export interface Education {
 
 export interface PersonalData {
   name: string;
+  avatar?: string | StaticImageData;
   designation: string;
   tagline?: string;
+  namePronunciation?: string;
+  namePronunciationUrl?: string;
+  flipSentences: string[];
   contact: {
     phone: string;
     email: string;

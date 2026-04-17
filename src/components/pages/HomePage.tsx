@@ -1,11 +1,10 @@
 import PlaneGridWrapper from "../layout/PlaneGridWrapper";
-import HeroCard from "../ui/HeroCard";
+import HeroSection from "../sections/Home/HeroSection";
+
 const HomePage = () => {
   return (
     <div>
-      <PlaneGridWrapper padding="px-0">
-        <HeroCard />
-      </PlaneGridWrapper>
+      <HeroSection />
     </div>
   );
 };

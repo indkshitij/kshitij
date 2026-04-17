@@ -1,9 +1,17 @@
-import {PersonalData} from "@/types";
+import { PersonalData } from "@/types";
+import profile from "@/assets/Image.jpg";
 
-export const personalData:PersonalData = {
+export const personalData: PersonalData = {
   name: "Kshitij Singh",
   designation: "Software Developer",
-
+  avatar: profile,
+  namePronunciation: "/kshitij.mp3",
+  namePronunciationUrl: "/kshitij.mp3",
+  flipSentences: [
+    "Building full-stack web applications.",
+    "Transforming ideas into digital reality.",
+    "Passionate about UI/UX.",
+  ],
   contact: {
     phone: "+91 91799 09425",
     email: "ind.kshitijsingh@gmail.com",
