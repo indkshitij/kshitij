@@ -1,13 +1,13 @@
-import PlaneGridWrapper from "./PlaneGridWrapper";
+import PageWrapper from "./PageWrapper";
 import { personalData } from "@/data/personalData";
 
 const Footer = () => {
   return (
-    <div className="pb-2">
-      <PlaneGridWrapper>
-        <footer className="px-5 py-10 text-sm text-neutral-600 ">
+    <div className="border-y border-line mb-5">
+      <PageWrapper>
+        <footer className=" py-10 text-sm text-neutral-600 ">
           {/* Top Section */}
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className=" px-5 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-medium text-neutral-900">
                 {personalData.name}
@@ -21,25 +21,25 @@ const Footer = () => {
             {/* Right: Social Links */}
             <div className="flex flex-wrap gap-4">
               {personalData?.socials &&
-                Object.entries(personalData.socials).map(([name, href]) => (
+                personalData.socials.slice(0, 4).map((s, idx) => (
                   <a
-                    key={name}
-                    href={href as string}
+                    key={idx}
+                    href={s.href as string}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="capitalize hover:text-neutral-900 transition-colors"
                   >
-                    {name}
+                    {s.title}
                   </a>
                 ))}
             </div>
           </div>
 
           {/* Divider */}
-          <div className="my-6 border-t border-neutral-200" />
+          <div className="my-6 border-t border-line" />
 
           {/* Bottom Section */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-neutral-500">
+          <div className="px-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-xs text-neutral-500">
             <p>
               © {new Date().getFullYear()} {personalData.name}. All rights
               reserved.
@@ -48,7 +48,7 @@ const Footer = () => {
             <p>Built with Next.js & Tailwind CSS</p>
           </div>
         </footer>
-      </PlaneGridWrapper>
+      </PageWrapper>
     </div>
   );
 };

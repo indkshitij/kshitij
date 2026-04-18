@@ -2,13 +2,15 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import Icon from "@/lib/icons";
 import clsx from "clsx";
+
+import { SunMediumIcon } from "@/components/animated-icons/sun-medium";
+import { MoonIcon } from "@/components/animated-icons/moon";
 
 type ThemeToggleProps = {
   showBorder?: boolean;
   showBg?: boolean;
-  rounded?: "md" | "full"|"sm"|"lg";
+  rounded?: "md" | "full" | "sm" | "lg";
   size?: "sm" | "md" | "lg";
 };
 
@@ -21,6 +23,7 @@ export default function ThemeToggle({
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const [isSwitching, setIsSwitching] = useState(false);
 
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
@@ -33,14 +36,18 @@ export default function ThemeToggle({
 
   const handleClick = () => {
     setIsPressed(true);
+    setIsSwitching(true);
 
-    if (!("startViewTransition" in document)) {
-      switchTheme();
-    } else {
+    if ("startViewTransition" in document) {
       (document as any).startViewTransition(switchTheme);
+    } else {
+      switchTheme();
     }
 
-    setTimeout(() => setIsPressed(false), 150);
+    setTimeout(() => {
+      setIsPressed(false);
+      setIsSwitching(false);
+    }, 250);
   };
 
   const sizeClasses = {
@@ -63,51 +70,74 @@ export default function ThemeToggle({
       onMouseUp={() => setIsPressed(false)}
       aria-label="Toggle Theme"
       className={clsx(
-        "relative flex items-center justify-center overflow-hidden",
+        "group relative flex items-center justify-center overflow-hidden",
         "transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        "cursor-pointer",
+        "cursor-pointer select-none",
 
         sizeClasses[size],
         roundedClasses[rounded],
 
-        showBg && "bg-neutral-100/60 dark:bg-neutral-900/60 backdrop-blur",
+        showBg &&
+          "bg-neutral-100/60 dark:bg-neutral-900/60 backdrop-blur-md",
 
-        showBorder && "border border-neutral-200/60 dark:border-neutral-800/60",
+        showBorder &&
+          "border border-neutral-200/60 dark:border-neutral-800/60",
 
-        "hover:bg-neutral-200/60 dark:hover:bg-neutral-800/60",
+        "hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50",
+        "hover:shadow-sm",
 
-        isPressed && "scale-90",
+        isPressed && "scale-[0.92]",
 
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/40",
+        isSwitching && "scale-95",
+
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400/40"
       )}
     >
-      {/* subtle inner highlight */}
-      <div className="absolute inset-0 rounded-inherit bg-white/10 dark:bg-white/0 pointer-events-none" />
-
-      {/*  Moon */}
+      {/* subtle hover glow */}
       <span
         className={clsx(
-          "absolute transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "absolute inset-0 rounded-inherit",
+          "opacity-0 transition-opacity duration-300",
+          "bg-black/5 dark:bg-white/5",
+          "group-hover:opacity-100"
+        )}
+      />
+
+      {/* click ripple */}
+      <span
+        className={clsx(
+          "absolute inset-0 rounded-inherit",
+          "scale-75 opacity-0",
+          "bg-black/10 dark:bg-white/10",
+          "transition-all duration-300",
+          isPressed && "scale-100 opacity-100"
+        )}
+      />
+
+      {/* Moon */}
+      <span
+        className={clsx(
+          "absolute flex items-center justify-center",
+          "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           isDark
             ? "opacity-100 rotate-0 scale-100"
-            : "opacity-0 rotate-90 scale-75",
-          isPressed && "scale-90",
+            : "opacity-0 rotate-90 scale-75"
         )}
       >
-        <Icon name="moon" />
+        <MoonIcon />
       </span>
 
       {/* Sun */}
       <span
         className={clsx(
-          "absolute transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          "absolute flex items-center justify-center",
+          "transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
           !isDark
             ? "opacity-100 rotate-0 scale-100"
-            : "opacity-0 -rotate-90 scale-75",
-          isPressed && "scale-90",
+            : "opacity-0 -rotate-90 scale-75"
         )}
       >
-        <Icon name="sun" />
+        <SunMediumIcon />
       </span>
     </button>
   );

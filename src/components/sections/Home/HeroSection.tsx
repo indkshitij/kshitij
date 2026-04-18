@@ -2,12 +2,21 @@
 
 import NameTile from "./NameTile";
 import HeroCard from "./HeroCard";
+import FilledGridWrapper from "@/components/layout/FilledGridWrapper";
+import { Overview } from "./Overview/Overview";
+import { SocialLinks } from "./SocialLinks";
+import About from "./About";
+
 export default function HeroSection() {
   return (
     <>
-       <NameTile/>
-       <HeroCard/>
-      
+      <HeroCard />
+      <NameTile />
+      <FilledGridWrapper showTopBorder={false} height="h-10" />
+      <Overview />
+      <SocialLinks />
+      <FilledGridWrapper showBottomBorder={false} height="h-10" />
+      <About />
     </>
   );
 }

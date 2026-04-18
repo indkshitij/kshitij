@@ -1,0 +1,52 @@
+"use client";
+
+import { PhoneIcon } from "lucide-react";
+import { toast } from "sonner";
+
+import { CopyButton } from "@/components/atoms/CopyButton";
+import { formatPhoneNumber } from "@/lib/string";
+import {
+  IntroItem,
+  IntroItemContent,
+  IntroItemIcon,
+  IntroItemLink,
+} from "../../../atoms/IntroItem";
+
+type PhoneItemProps = {
+  phoneNumber: string;
+};
+
+export function PhoneItem({ phoneNumber }: PhoneItemProps) {
+  const formatted = formatPhoneNumber(phoneNumber);
+
+  return (
+    <IntroItem className="group">
+      {/* Icon */}
+      <IntroItemIcon>
+        <PhoneIcon className="size-4" />
+      </IntroItemIcon>
+
+      {/* Phone link */}
+      <IntroItemContent>
+        <IntroItemLink
+          href={`tel:${phoneNumber}`}
+          aria-label={`Call ${formatted}`}
+        >
+          {formatted}
+        </IntroItemLink>
+      </IntroItemContent>
+
+      {/* Copy button */}
+      <div className="opacity-0 group-hover:opacity-100 transition-opacity">
+        <CopyButton
+          variant="ghost"
+          size="icon-sm"
+          text={phoneNumber}
+          className="text-muted-foreground"
+          onCopySuccess={() => toast.success("Copied")}
+          onCopyError={() => toast.error("Failed")}
+        />
+      </div>
+    </IntroItem>
+  );
+}
