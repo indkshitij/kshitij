@@ -42,7 +42,7 @@ export function Overview() {
                 <IntroItemLink
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData?.contact?.location)}`}
                   aria-label={`Location: ${personalData?.contact?.location}`}
-                  className="font-fira"
+                  className="font-mono"
                 >
                   {personalData?.contact?.location}
                 </IntroItemLink>
@@ -62,7 +62,8 @@ export function Overview() {
               <IntroItemContent>
                 <IntroItemLink
                   href={personalData?.website}
-                  aria-label={`Personal website: ${urlToName(personalData?.website || "")}`} className="font-fira"
+                  aria-label={`Personal website: ${urlToName(personalData?.website || "")}`}
+                  className="font-mono"
                 >
                   {urlToName(personalData?.website || "")}
                 </IntroItemLink>
@@ -74,7 +75,7 @@ export function Overview() {
                 {getGenderIcon(personalData.gender)}
               </IntroItemIcon>
               <IntroItemContent
-              className="font-fira"
+                className="font-mono"
                 aria-label={`Pronouns: ${personalData.pronouns}`}
               >
                 {personalData.pronouns}

@@ -117,14 +117,16 @@ export function CurrentLocalTimeItem({ timeZone }: Props) {
         {/* Time */}
         <Tooltip>
           <TooltipTrigger asChild>
-            <span className=" font-fira tabular-nums font-mono">{time}</span>
+            <span className=" font-mono tabular-nums font-mono">{time}</span>
           </TooltipTrigger>
 
           <TooltipContent>{timeZone || "Unknown timezone"}</TooltipContent>
         </Tooltip>
 
         {/* Subtle info */}
-        <span className="text-muted-foreground font-fira text-xs">· {diffText}</span>
+        <span className="text-muted-foreground font-mono text-xs">
+          · {diffText}
+        </span>
       </IntroItemContent>
     </IntroItem>
   );

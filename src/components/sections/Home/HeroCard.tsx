@@ -12,7 +12,7 @@ const HeroCard = () => {
           <div className="relative inline-block">
             {/* Animated wrapper */}
             <div className="transition-transform duration-300 ease-out hover:translate-x-1 hover:translate-y-1">
-              <div className="text-8xl font-bold font-pixel">
+              <div className="text-5xl font-black font-pixel-square ">
                 KS
               </div>
             </div>

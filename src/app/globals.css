@@ -1,58 +1,17 @@
-/* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Code:wght@300..700&family=Geist:wght@100..900&family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Manrope:wght@200..800&family=Press+Start+2P&family=Sora:wght@100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap"); */
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@plugin "@tailwindcss/typography";
+/* @import "shadcn/tailwind.css"; */
+/* @plugin "@tailwindcss/typography"; */
 @import "./style/scroll-fade-effect.css";
-/* @theme {
-  --font-sans: "Geist", sans-serif;
-  --font-mono: "Fira Code", monospace;
-  --font-gsans: "Google Sans Code", monospace;
-} */
-* {
-  /* font-family: "Geist", sans-serif !important; */
-}
+
 body {
   @apply bg-background text-foreground antialiased;
   font-synthesis-weight: none;
   text-rendering: optimizeLegibility;
 }
-/* 
-
-  .font-manrope {
-    font-family: "Manrope", sans-serif !important;
-  }
-  .font-sora {
-    font-family: "Sora", sans-serif !important;
-  }
-  .font-dm {
-    font-family: "DM Sans", sans-serif !important;
-  }
-  .font-space {
-    font-family: "Space Grotesk", sans-serif !important;
-  }
-  .font-geist {
-    font-family: "Geist", sans-serif !important;
-  }
-
-  .font-press {
-    font-family: "Press Start 2P", system-ui !important;
-    font-style: normal;
-  }
-
-  .font-fira {
-    font-family: "Fira Code", monospace !important;
-  }
-
-  .font-gsans-code {
-    font-family: "Google Sans Code", monospace !important;
-    font-variation-settings: "MONO" 1;
-  }
-
-  .font-source {
-    font-family: "Source Code Pro", monospace !important;
-  }
-} */
+html {
+  @apply font-sans;
+}
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -89,11 +48,20 @@ body {
   --color-selection: var(--selection);
   --color-selection-foreground: var(--selection-foreground);
 
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
-  --font-pixel: var(--font-pixel);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* --font-pixel: var(--font-pixel); */
   --font-pixel-square: var(--font-geist-pixel-square);
-  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --font-pixel: var(--font-geist-pixel-square);
+  --font-pixel-square: var(--font-geist-pixel-square);
+  --font-pixel-grid: var(--font-geist-pixel-grid);
+  --font-pixel-circle: var(--font-geist-pixel-circle);
+  --font-pixel-triangle: var(--font-geist-pixel-triangle);
+  --font-pixel-line: var(--font-geist-pixel-line);
+  --font-heading: var(--font-geist-sans);
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -632,9 +600,3 @@ body {
     display: none;
   }
 }
-
-/* --------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------- */
-
-/* --------------------------------------------------------------------------- */
-/* --------------------------------------------------------------------------- */

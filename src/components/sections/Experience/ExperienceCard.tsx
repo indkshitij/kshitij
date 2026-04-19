@@ -7,7 +7,6 @@ import PageWrapper from "@/components/layout/PageWrapper";
 
 type Props = {
   experience: Experience;
-  
 };
 
 const ExperienceCard = ({ experience }: Props) => {
@@ -28,9 +27,9 @@ const ExperienceCard = ({ experience }: Props) => {
                 <Image
                   src={experience.companyLogo}
                   alt={`${experience.companyName} logo`}
-                  width={24}
-                  height={24}
-                  className="rounded-full"
+                  width={25}
+                  height={25}
+                  className="rounded-full w-auto h-auto"
                   unoptimized
                 />
               ) : typeof experience.companyLogo === "function" ? (

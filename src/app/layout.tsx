@@ -6,10 +6,15 @@ import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Hotkeys from "@/lib/Hotkeys";
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
-import { GeistPixelSquare, GeistPixelGrid, GeistPixelCircle, GeistPixelTriangle, GeistPixelLine } from 'geist/font/pixel';
-
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
+import {
+  GeistPixelSquare,
+  GeistPixelGrid,
+  GeistPixelCircle,
+  GeistPixelTriangle,
+  GeistPixelLine,
+} from "geist/font/pixel";
 
 export const metadata: Metadata = {
   title: "Kshitij | Developer Portfolio",
@@ -23,7 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={GeistSans.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`
+    ${GeistSans.variable}
+    ${GeistMono.variable}
+    ${GeistPixelSquare.variable}
+    ${GeistPixelGrid.variable}
+    ${GeistPixelCircle.variable}
+    ${GeistPixelTriangle.variable}
+    ${GeistPixelLine.variable}
+  `}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col antialiased">
         <SpeedInsights />
 
