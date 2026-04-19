@@ -11,8 +11,10 @@ import { Collapsible as CollapsibleRoot } from "@/components/ui/collapsible";
 import type {
   ChevronsUpDownIconHandle,
   ChevronsUpDownIconProps,
-} from "@/components/animated-icons/chevron-down-icon/chevrons-up-down-icon";
-import { ChevronsUpDownIcon } from "@/components/animated-icons/chevron-down-icon/chevrons-up-down-icon";
+} from "@/components/animated-icons/chevron-up-down-icon/chevrons-up-down-icon";
+import { ChevronsUpDownIcon } from "@/components/animated-icons/chevron-up-down-icon/chevrons-up-down-icon";
+import { useSound } from "@/hooks/use-sound";
+import { SOUNDS } from "@/lib/sounds";
 
 type CollapsibleContextType = {
   open: boolean;
@@ -42,6 +44,7 @@ function CollapsibleWithContext({
     defaultOpen ?? false,
   );
   const open = controlledOpen ?? uncontrolledOpen;
+    const playClick = useSound(SOUNDS.click);
 
   return (
     <CollapsibleContext.Provider value={{ open }}>
@@ -52,6 +55,7 @@ function CollapsibleWithContext({
             setUncontrolledOpen(open);
           }
           onOpenChange?.(open);
+          playClick();
         }}
         {...props}
       />

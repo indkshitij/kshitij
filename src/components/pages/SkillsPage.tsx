@@ -1,8 +1,8 @@
-import React from 'react'
+import SkillsSection from '../sections/Skills/SkillsSection'
 
 const SkillsPage = () => {
   return (
-    <div>SkillsPage</div>
+    <div><SkillsSection/></div>
   )
 }
 

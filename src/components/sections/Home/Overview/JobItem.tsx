@@ -14,7 +14,7 @@ import {
 type JobItemProps = {
   title: string;
   company: string;
-  website: string;
+  website?: string;
   experienceId?: string;
 };
 
@@ -30,7 +30,7 @@ export function JobItem({
     <IntroItem>
       <IntroItemIcon>{getJobIcon(title)}</IntroItemIcon>
 
-      <IntroItemContent className="font-mono">
+      <IntroItemContent className="text-xs sm:text-sm font-mono">
         {title} @
         <IntroItemLink
           className="ml-0.5 font-medium font-mono"

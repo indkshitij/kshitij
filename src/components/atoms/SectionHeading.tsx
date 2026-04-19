@@ -15,7 +15,7 @@ const SectionHeading = ({
     <div className={cn("space-y-1", className)}>
       
       {/* Title */}
-      <h2 className="ml-3 text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
+      <h2 className="ml-3 text-2xl sm:text-3xl font-heading font-semibold tracking-tight text-foreground">
         {title}
       </h2>
 

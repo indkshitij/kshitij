@@ -11,7 +11,7 @@ import { SOUNDS } from "@/lib/sounds";
 export default function Hotkeys() {
   const { resolvedTheme, setTheme } = useTheme();
   const { setMetaColor } = useMetaColor();
-  const playClick = useSound(SOUNDS.click);
+  const playClick = useSound(SOUNDS.themeChangeSound);
 
   useHotkeys("d", (e) => {
     e.preventDefault();

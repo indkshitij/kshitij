@@ -1,32 +1,405 @@
-export const projects = [
+import { Brain } from "lucide-react";
+import type { Project } from "@/types";
+
+export const PROJECTS: Project[] = [
   {
     title: "Brainwave AI - Interview Simulator",
-    tech: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
     github: "https://github.com/indkshitij/brainwave-ai",
-    description: [
-      "Reduced interview preparation effort by 50% through a configurable AI-based simulation system.",
-      "Improved initial interaction latency by 30% using optimized frontend loading strategies.",
-      "Generated structured feedback for each session using voice-driven AI processing.",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
     ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
   },
   {
-    title: "Neo Finance - AI Finance Manager",
-    tech: ["MERN", "Gemini", "Inngest", "Resend", "Arcjet"],
-    github: "https://github.com/indkshitij/neo-finance",
-    description: [
-      "Minimized manual expense entry by 60% using automated receipt scanning and AI parsing.",
-      "Improved financial visibility with automated monthly insights and budget alerts.",
-      "Ensured transactional consistency with concurrent-safe backend operations.",
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
     ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
   },
   {
-    title: "Smart AI Summarizer - Chrome Extension",
-    tech: ["React.js", "Flask", "Groq API", "Chrome APIs"],
-    github: "https://github.com/indkshitij/ai-summarizer",
-    description: [
-      "Reduced content review time by 50% via real-time summarization directly in the browser.",
-      "Enhanced accessibility with speech playback and downloadable summaries.",
-      "Optimized performance to handle multi-page content within browser memory limits.",
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
     ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
+  },
+  {
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
+    ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
+  },
+  {
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
+    ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
+  },
+  {
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
+    ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
+  },
+  {
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
+    ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
+  },
+  {
+    title: "Brainwave AI - Interview Simulator",
+    tagline: "Practice real interviews with AI-powered voice simulations",
+
+    shortDescription:
+      "AI-driven interview simulator with voice interaction and feedback.",
+
+    techUsed: ["MERN", "Vapi", "Gemini", "Tailwind CSS"],
+
+    github: "https://github.com/indkshitij/brainwave-ai",
+    live: "https://brainwave-ai.vercel.app/",
+    icon: Brain,
+    // logo: "/experience/agileLogo.png",
+
+    media: [
+      { type: "image", url: "/projects/brainwave-1.png" },
+      { type: "image", url: "/projects/brainwave-2.png" },
+      {
+        type: "video",
+        url: "https://youtube.com/watch?v=demo",
+        thumbnail: "/projects/brainwave-thumb.png",
+      },
+    ],
+
+    description: `
+## 🧠 AI-powered mock interview platform
+
+A voice-driven interview simulator designed to replicate real-world technical interviews using AI.
+
+---
+
+### 🚀 Highlights
+- Reduced interview preparation effort by **50%**
+- Improved interaction latency by **30%**
+- Generated structured feedback using AI
+
+---
+
+### ✨ Features
+- 🎙️ Real-time voice-based interview sessions  
+- 🤖 AI-generated role-specific questions  
+- 📊 Instant feedback with insights  
+- 🔁 Dynamic difficulty system  
+
+---
+
+### 💡 Insight
+Built to make interview prep **interactive, realistic, and measurable**.
+`,
   },
 ];

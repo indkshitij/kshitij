@@ -36,14 +36,14 @@ const NameTile = () => {
                   <span className="hidden dark:inline font-mono">
                     text-zinc-50
                   </span>
-                  <span className="font-mono"> font-medium</span>
-                  {/* {" font-medium"}  */}
+                  
+                  {" font-medium"} 
                 </div>
               </div>
 
               <div className="border-t border-line">
                 <div className="flex items-center gap-2 pl-4">
-                  <h1 className="-translate-y-px text-4xl tracking-tight font-semibold ">
+                  <h1 className="-translate-y-px text-2xl sm:text-4xl tracking-tight font-semibold ">
                     {personalData.name}
                   </h1>
 

@@ -15,7 +15,7 @@ const ExperienceCard = ({ experience }: Props) => {
       {" "}
       <div
         id={`experience-${experience.id}`}
-        className="px-5 scroll-mt-14 space-y-4 py-4 border-b border-line"
+        className="px-2 sm:px-5 scroll-mt-14 space-y-4 py-4 border-b border-line"
       >
         {/* Header */}
         <div className="flex items-center gap-3">

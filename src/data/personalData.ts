@@ -4,6 +4,8 @@ import profile from "@/assets/Image.jpg";
 import EXPERIENCE from "@/data/experience";
 import NAV_LINK from "./webEssential";
 import EDUCATION from "@/data/education";
+import { PROJECTS } from "./projects";
+import SKILLS from "./skills";
 
 export const personalData: PersonalData = {
   name: "Kshitij Singh",
@@ -49,45 +51,13 @@ You can explore my work on [GitHub](https://github.com/indkshitij) or connect on
     ogImage: profile,
   },
 
-  jobs: [
-    {
-      title: "Frontend Developer Intern",
-      company: "Forescribe",
-      website: "#",
-      experienceId: "forescribe",
-    },
-  ],
-
   navigation: NAV_LINK,
 
   socials: SOCIAL_LINKS,
 
-  skills: [
-    {
-      title: "Frontend",
-      skills: ["React", "Next.js", "Tailwind", "TypeScript"],
-    },
-    {
-      title: "Backend",
-      skills: ["Node.js", "Express", "MongoDB"],
-    },
-    {
-      title: "Tools",
-      skills: ["Git", "Docker", "Postman"],
-    },
-  ],
+  skills: SKILLS,
 
-  projects: [
-    {
-      title: "Brainwave AI",
-      tech: ["MERN", "Gemini"],
-      github: "#",
-      description: [
-        "Reduced interview prep time by 50%",
-        "AI-driven feedback system",
-      ],
-    },
-  ],
+  projects: PROJECTS,
 
   experience: EXPERIENCE,
 

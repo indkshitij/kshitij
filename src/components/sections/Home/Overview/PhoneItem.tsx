@@ -23,7 +23,7 @@ export function PhoneItem({ phoneNumber }: PhoneItemProps) {
     <IntroItem className="group">
       {/* Icon */}
       <IntroItemIcon>
-        <PhoneIcon className="size-4" />
+        <PhoneIcon  />
       </IntroItemIcon>
 
       {/* Phone link */}
@@ -31,7 +31,7 @@ export function PhoneItem({ phoneNumber }: PhoneItemProps) {
         <IntroItemLink
           href={`tel:${phoneNumber}`}
           aria-label={`Call ${formatted}`}
-          className="font-mono"
+          className="font-mono text-xs sm:text-sm"
         >
           {formatted}
         </IntroItemLink>

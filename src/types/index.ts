@@ -2,11 +2,14 @@ import { StaticImageData } from "next/image";
 import { ReactNode, ComponentType } from "react";
 import type { RoleCategory } from "@/lib/role-icons";
 
-export interface SkillCategory {
-  title: string;
-  skills: string[];
-}
+export type Skill = {
+  name: string;
+  logo: string;
+  website: string;
+  description: string;
 
+  tags: string[]; 
+};
 export type SocialLink = {
   icon: string | StaticImageData;
   title: string;
@@ -44,7 +47,7 @@ export interface ExperiencePosition {
 
   startDate: string;
   endDate: string;
-  duration?: string; // optional → can be auto-calculated
+  duration?: string; 
 
   current?: boolean;
 
@@ -81,20 +84,41 @@ export interface Experience {
 
   summary?: string;
 }
-export interface Project {
-  title: string;
-  tech: string[];
-  description: string[];
-  github: string;
-  live?: string;
-}
 
-export interface Job {
+export type ProjectMedia = {
+  type: "image" | "video";
+  url: string;
+  alt?: string;
+  thumbnail?: string;
+};
+
+export type Project = {
   title: string;
-  company: string;
-  website: string;
-  experienceId: string;
-}
+  tagline?: string;
+
+  shortDescription?: string;
+
+  period?: {
+    start: string;
+    end?: string;
+  };
+  duration?: string;
+
+  icon?: any;
+  logo?: string;
+
+  techUsed?: string[];
+
+  github?: string;
+  live?: string;
+  link?: string;
+
+  isExpanded?: boolean;
+
+  description: string;
+
+  media?: ProjectMedia[];
+};
 
 export interface PersonalData {
   //  Basic
@@ -132,9 +156,6 @@ export interface PersonalData {
     ogImage?: string | StaticImageData;
   };
 
-  //  Jobs
-  jobs?: Job[];
-
   //  Navigation
   navigation?: NavLink[];
 
@@ -142,7 +163,7 @@ export interface PersonalData {
   socials: SocialLink[];
 
   //  Skills (Better structured)
-  skills?: SkillCategory[];
+  skills?: Skill[];
 
   //  Projects
   projects?: Project[];

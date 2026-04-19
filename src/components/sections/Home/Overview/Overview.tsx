@@ -2,35 +2,51 @@ import { LinkIcon, MapPinIcon, MarsIcon, VenusIcon } from "lucide-react";
 
 import { personalData } from "@/data/personalData";
 import { urlToName } from "@/lib/url";
-import { CurrentLocalTimeItem } from "./CurrentLocalTimeItem";
-import { EmailItem } from "./EmailItem";
+import { CurrentLocalTimeItem } from "@/components/sections/Home/Overview/CurrentLocalTimeItem";
+import { EmailItem } from "@/components/sections/Home/Overview/EmailItem";
 import {
   IntroItem,
   IntroItemContent,
   IntroItemIcon,
   IntroItemLink,
-} from "../../../atoms/IntroItem";
+} from "@/components/atoms/IntroItem";
 import { JobItem } from "./JobItem";
 import { PhoneItem } from "./PhoneItem";
 import PageWrapper from "@/components/layout/PageWrapper";
 
 export function Overview() {
+  const latest = personalData.experience
+    ?.flatMap((company) =>
+      company.positions.map((position) => ({
+        company,
+        position,
+      })),
+    )
+    .sort((a, b) => {
+      // prioritize current role
+      if (a.position.current) return -1;
+      if (b.position.current) return 1;
+
+      // fallback: compare dates
+      return (
+        new Date(b.position.startDate).getTime() -
+        new Date(a.position.startDate).getTime()
+      );
+    })[0];
   return (
     <PageWrapper showBorderY={false}>
       <h2 className="sr-only">Overview</h2>
-      <div className="p-5">
+      <div className="px-2 sm:px-5 py-2.5 sm:py-5">
         <div className="mb-2.5 ">
-          {personalData.jobs?.map((job, index) => {
-            return (
-              <JobItem
-                key={index}
-                title={job.title}
-                company={job.company}
-                website={job.website}
-                experienceId={job.experienceId}
-              />
-            );
-          })}
+          {latest && (
+            <JobItem
+              key={latest.position.id}
+              title={latest.position.role}
+              company={latest.company.companyName}
+              website={latest.company.companyWebsite}
+              experienceId={latest.company.id}
+            />
+          )}
         </div>
         <div className="space-y-2.5 ">
           <div className="grid gap-x-4 gap-y-2.5 sm:grid-cols-2">
@@ -42,7 +58,7 @@ export function Overview() {
                 <IntroItemLink
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData?.contact?.location)}`}
                   aria-label={`Location: ${personalData?.contact?.location}`}
-                  className="font-mono"
+                  className="font-mono text-xs sm:text-sm"
                 >
                   {personalData?.contact?.location}
                 </IntroItemLink>
@@ -63,7 +79,7 @@ export function Overview() {
                 <IntroItemLink
                   href={personalData?.website}
                   aria-label={`Personal website: ${urlToName(personalData?.website || "")}`}
-                  className="font-mono"
+                  className="font-mono text-xs sm:text-sm"
                 >
                   {urlToName(personalData?.website || "")}
                 </IntroItemLink>
@@ -75,7 +91,7 @@ export function Overview() {
                 {getGenderIcon(personalData.gender)}
               </IntroItemIcon>
               <IntroItemContent
-                className="font-mono"
+                className="font-mono text-xs sm:text-sm"
                 aria-label={`Pronouns: ${personalData.pronouns}`}
               >
                 {personalData.pronouns}

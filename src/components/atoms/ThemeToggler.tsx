@@ -1,7 +1,6 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useHotkeys } from "react-hotkeys-hook";
 
 import { META_THEME_COLORS } from "@/data/webEssential";
 import { useMetaColor } from "@/hooks/use-meta-color";
@@ -22,7 +21,7 @@ export default function ThemeToggler() {
 
   const { setMetaColor } = useMetaColor();
 
-  const playClick = useSound(SOUNDS.click);
+  const playClick = useSound(SOUNDS?.themeChangeSound);
 
   const switchTheme = (sound = true) => {
     if (sound) playClick(0.2);

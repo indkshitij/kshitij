@@ -21,7 +21,7 @@ export function EmailItem({ email }: EmailItemProps) {
     <IntroItem className="group">
       {/* Icon */}
       <IntroItemIcon>
-        <MailIcon className="size-4" />
+        <MailIcon  />
       </IntroItemIcon>
 
       {/* Email link */}
@@ -29,7 +29,7 @@ export function EmailItem({ email }: EmailItemProps) {
         <IntroItemLink
           href={`mailto:${email}`}
           aria-label={`Send email to ${email}`}
-          className="font-mono"
+          className="font-mono text-xs sm:text-sm"
         >
           {email}
         </IntroItemLink>

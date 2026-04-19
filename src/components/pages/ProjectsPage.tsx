@@ -1,8 +1,9 @@
-import React from 'react'
+
+import ProjectsSection from '../sections/Project/ProjectsSection'
 
 const ProjectsPage = () => {
   return (
-    <div>ProjectsPage</div>
+    <div><ProjectsSection/></div>
   )
 }
 

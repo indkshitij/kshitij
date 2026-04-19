@@ -5,6 +5,7 @@ import { personalData } from "@/data/personalData";
 import { Markdown } from "@/components/ui/markdown";
 import SectionHeading from "@/components/atoms/SectionHeading";
 import PageWrapper from "@/components/layout/PageWrapper";
+import { PanelContent } from "@/components/ui/panel";
 
 export default function About() {
   return (
@@ -13,10 +14,13 @@ export default function About() {
         <SectionHeading title="About" />
       </PageWrapper>
       <PageWrapper>
-        {/* Content */}
-        <Prose className="max-w-none text-base sm:text-md font-medium py-5 px-7 leading-relaxed text-muted-foreground [&_ul]:space-y-4 [&_li]:marker:text-muted-foreground/60">
-          <Markdown >{personalData.about}</Markdown>
-        </Prose>
+        <PanelContent>
+        
+          <Prose>
+            <Markdown>{personalData.about}</Markdown>
+          </Prose>
+        
+        </PanelContent>
       </PageWrapper>
     </>
   );

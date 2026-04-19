@@ -6,13 +6,12 @@ import { InfinityIcon } from "lucide-react";
 import {
   Collapsible,
   CollapsibleChevronsIcon,
-} from "@/components/animated-icons/collapsible/collapsible-animated";
+} from "@/components/animated-icons/collapsible-animated";
 
 import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-
 import { Markdown } from "@/components/ui/markdown";
 import { Separator } from "@/components/ui/separator";
 import { Tag } from "@/components/atoms/Tag";
@@ -21,6 +20,8 @@ import { Prose } from "@/components/ui/typography";
 import { formatDuration } from "@/lib/date";
 import { cn } from "@/lib/utils";
 import { roleIconMap, getRoleCategory } from "@/lib/role-icons";
+import { IntroItemIcon } from "@/components/atoms/IntroItem";
+
 
 type Props = {
   position: ExperiencePosition;
@@ -38,11 +39,13 @@ export function ExperiencePositionItem({ position, index }: Props) {
 
   const Icon = roleIconMap[category];
 
+  
   return (
     <Collapsible
       className="relative pb-5 "
       defaultOpen={index === 0}
       disabled={!position.description}
+      
     >
       <CollapsibleTrigger
         className={cn(
@@ -53,18 +56,9 @@ export function ExperiencePositionItem({ position, index }: Props) {
         )}
       >
         {/* Top Row */}
-        <div className="relative z-1 mb-1 flex items-center gap-3">
+        <div className="relative z-1 mb-1 flex items-center gap-3 sm:gap-4">
           {/* Icon */}
-          <div
-            className={cn(
-              "flex size-6 shrink-0 items-center justify-center rounded-lg",
-              "bg-muted text-muted-foreground",
-              "border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
-              "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-            )}
-          >
-            {Icon && <Icon className="size-4" />}
-          </div>
+          <IntroItemIcon>{Icon && <Icon />}</IntroItemIcon>
 
           {/* Role */}
           <h4 className="flex-1 font-medium text-balance">{position.role}</h4>
@@ -76,7 +70,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
         </div>
 
         {/* Meta Info */}
-        <div className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <div className="flex items-center flex-wrap gap-2 pl-12 text-sm text-muted-foreground">
           {position.roleType && (
             <>
               <dl>
@@ -128,7 +122,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
       {/* Description */}
       <CollapsibleContent className="overflow-hidden">
         {position.description && (
-          <Prose className="pt-2 pl-9">
+          <Prose className="pt-4 pl-12">
             <Markdown>{position.description}</Markdown>
           </Prose>
         )}
@@ -136,7 +130,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
 
       {/* Tech Stack */}
       {Array.isArray(position.techStack) && position.techStack.length > 0 && (
-        <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
+        <ul className="flex flex-wrap gap-1.5 pt-4 pl-12">
           {position.techStack.map((skill, i) => (
             <li key={i} className="flex">
               <Tag>{skill}</Tag>
