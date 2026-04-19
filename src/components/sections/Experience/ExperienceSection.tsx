@@ -13,7 +13,7 @@ const ExperienceSection = () => {
       </div>
 
       {EXPERIENCE.map((exp, index) => (
-        <ExperienceCard key={exp.id} experience={exp} index={index} />
+        <ExperienceCard key={index} experience={exp} />
       ))}
     </>
   );

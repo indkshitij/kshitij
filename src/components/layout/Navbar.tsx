@@ -44,14 +44,14 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground transition-[color] hover:text-foreground data-active:text-foreground"
+                  className="text-sm font-medium -tracking-normal text-muted-foreground transition-[color] hover:text-foreground data-active:text-foreground"
                 >
                   {link.name}
                 </Link>
               ))}
 
               <div className="border-l px-2">
-                <ThemeToggler size="sm" />
+                <ThemeToggler />
               </div>
             </div>
           </div>
@@ -67,8 +67,7 @@ const Navbar = () => {
 
             {/* right controls */}
             <div className="flex items-center gap-3">
-              
-              <ThemeToggler size="sm" />
+              <ThemeToggler />
 
               <button
                 ref={buttonRef}

@@ -15,7 +15,7 @@ function Tag({
       data-slot="tag"
       className={cn(
         
-        "inline-flex items-center gap-1.5 rounded-sm px-2 py-0.5 text-xs font-mono",
+        "inline-flex items-center gap-1.5 rounded-sm px-2 py-0.5 text-xs font-fira",
         "border backdrop-blur-sm select-none",
 
         "whitespace-nowrap",

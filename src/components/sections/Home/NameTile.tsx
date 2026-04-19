@@ -25,21 +25,22 @@ const NameTile = () => {
                 </div>
               </div>
               <div className="flex flex-1 flex-col">
-                <div className="flex grow items-end pb-1 pl-4">
+                <div className="flex grow items-end pb-1 pl-4 ">
                   <div
-                    className="line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800"
+                    className=" font-fira line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800 "
                     aria-hidden
                   >
                     {"text-3xl "}
-                    <span className="inline dark:hidden">text-zinc-950</span>
-                    <span className="hidden dark:inline">text-zinc-50</span>
-                    {" font-medium"}
+                    <span className="inline dark:hidden font-fira">text-zinc-950</span>
+                    <span className="hidden dark:inline font-fira">text-zinc-50</span>
+                     <span className="font-fira">{" "}font-medium</span>
+                    {/* {" font-medium"}  */}
                   </div>
                 </div>
 
                 <div className="border-t border-line">
                   <div className="flex items-center gap-2 pl-4">
-                    <h1 className="-translate-y-px text-3xl font-semibold tracking-tight">
+                    <h1 className="-translate-y-px text-4xl tracking-tight font-semibold ">
                       {personalData.name}
                     </h1>
 
@@ -49,7 +50,7 @@ const NameTile = () => {
                     />
 
                     {personalData.namePronunciationUrl && (
-                      <PronounceMyName
+                      <PronounceMyName className="cursor-pointer"
                         namePronunciationUrl={personalData.namePronunciationUrl}
                       />
                     )}
@@ -57,7 +58,7 @@ const NameTile = () => {
 
                   <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
                     <TextFlip
-                      className="font-mono text-sm text-balance text-muted-foreground"
+                      className="font-fira text-sm text-balance text-muted-foreground"
                       variants={{
                         initial: { y: -10, opacity: 0 },
                         animate: { y: -1, opacity: 1 },

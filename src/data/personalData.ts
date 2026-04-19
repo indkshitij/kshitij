@@ -3,14 +3,15 @@ import SOCIAL_LINKS from "@/data/SocialLinks";
 import profile from "@/assets/Image.jpg";
 import EXPERIENCE from "@/data/experience";
 import NAV_LINK from "./webEssential";
+import EDUCATION from "@/data/education";
 
 export const personalData: PersonalData = {
   name: "Kshitij Singh",
   designation: "Software Developer",
   avatar: profile,
   tagline: "Building scalable web apps & AI-powered solutions",
-  namePronunciation: "/kshitij.mp3",
-  namePronunciationUrl: "/kshitij.mp3",
+  namePronunciation: "/sounds/kshitij.mp3",
+  namePronunciationUrl: "/sounds/kshitij.mp3",
   timeZone: "Asia/Kolkata",
   website: "https://kshitij-singh.vercel.app",
   gender: "male",
@@ -90,14 +91,7 @@ You can explore my work on [GitHub](https://github.com/indkshitij) or connect on
 
   experience: EXPERIENCE,
 
-  education: [
-    {
-      degree: "B.Tech CSE (AI & ML)",
-      institution: "RGPV",
-      duration: "2022 - Present",
-      score: "CGPA: 8.19",
-    },
-  ],
+  education: EDUCATION,
 
   achievements: ["Solved 200+ DSA problems", "Built multiple full-stack apps"],
 

@@ -8,7 +8,7 @@ function Prose({
   className,
   asChild = false,
   ...props
-}: React.ComponentProps<"div"> & {
+}: React.ComponentProps<"div"> & {  
   asChild?: boolean
 }) {
   const Comp = asChild ? Slot.Root : "div"

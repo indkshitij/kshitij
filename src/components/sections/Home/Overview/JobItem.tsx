@@ -30,10 +30,10 @@ export function JobItem({
     <IntroItem>
       <IntroItemIcon>{getJobIcon(title)}</IntroItemIcon>
 
-      <IntroItemContent>
+      <IntroItemContent className="font-fira">
         {title} @
         <IntroItemLink
-          className="ml-0.5 font-medium"
+          className="ml-0.5 font-medium font-fira"
           href={isInternal ? `#experience-${experienceId}` : website}
           target={isInternal ? "_self" : "_blank"}
           rel={isInternal ? undefined : "noopener noreferrer"}

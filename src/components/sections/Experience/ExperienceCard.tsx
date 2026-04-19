@@ -7,10 +7,10 @@ import PageWrapper from "@/components/layout/PageWrapper";
 
 type Props = {
   experience: Experience;
-  index: number;
+  
 };
 
-const ExperienceCard = ({ experience, index }: Props) => {
+const ExperienceCard = ({ experience }: Props) => {
   return (
     <PageWrapper>
       {" "}

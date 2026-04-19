@@ -2,7 +2,6 @@ import { LinkIcon, MapPinIcon, MarsIcon, VenusIcon } from "lucide-react";
 
 import { personalData } from "@/data/personalData";
 import { urlToName } from "@/lib/url";
-import { Panel, PanelContent } from "@/components/ui/panel";
 import { CurrentLocalTimeItem } from "./CurrentLocalTimeItem";
 import { EmailItem } from "./EmailItem";
 import {
@@ -43,6 +42,7 @@ export function Overview() {
                 <IntroItemLink
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(personalData?.contact?.location)}`}
                   aria-label={`Location: ${personalData?.contact?.location}`}
+                  className="font-fira"
                 >
                   {personalData?.contact?.location}
                 </IntroItemLink>
@@ -62,7 +62,7 @@ export function Overview() {
               <IntroItemContent>
                 <IntroItemLink
                   href={personalData?.website}
-                  aria-label={`Personal website: ${urlToName(personalData?.website || "")}`}
+                  aria-label={`Personal website: ${urlToName(personalData?.website || "")}`} className="font-fira"
                 >
                   {urlToName(personalData?.website || "")}
                 </IntroItemLink>
@@ -74,6 +74,7 @@ export function Overview() {
                 {getGenderIcon(personalData.gender)}
               </IntroItemIcon>
               <IntroItemContent
+              className="font-fira"
                 aria-label={`Pronouns: ${personalData.pronouns}`}
               >
                 {personalData.pronouns}

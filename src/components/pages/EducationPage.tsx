@@ -1,8 +1,9 @@
 import React from 'react'
+import EducationSection from '../sections/Education/EducationSection'
 
 const EducationPage = () => {
   return (
-    <div>EducationPage</div>
+    <div><EducationSection /></div>
   )
 }
 

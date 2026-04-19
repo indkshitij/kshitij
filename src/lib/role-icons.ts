@@ -14,6 +14,7 @@ import {
   LineChart,
   Globe,
   Settings,
+  GraduationCap,
 } from "lucide-react";
 
 import type { ComponentType } from "react";
@@ -34,7 +35,8 @@ export type RoleCategory =
   | "analytics"
   | "web"
   | "system"
-  | "general";
+  | "general"
+  | "education";
 
 export const roleIconMap: Record<
   RoleCategory,
@@ -56,6 +58,7 @@ export const roleIconMap: Record<
   web: Globe,
   system: Settings,
   general: Briefcase,
+  education: GraduationCap,
 };
 
 export function getRoleCategory(role: string): RoleCategory {
@@ -67,7 +70,8 @@ export function getRoleCategory(role: string): RoleCategory {
   if (r.includes("mobile")) return "mobile";
   if (r.includes("data")) return "data";
   if (r.includes("devops")) return "devops";
-  if (r.includes("design") || r.includes("ui") || r.includes("ux")) return "design";
+  if (r.includes("design") || r.includes("ui") || r.includes("ux"))
+    return "design";
   if (r.includes("security")) return "security";
   if (r.includes("ai") || r.includes("ml")) return "ai";
   if (r.includes("cli")) return "cli";
@@ -76,6 +80,7 @@ export function getRoleCategory(role: string): RoleCategory {
   if (r.includes("analytics")) return "analytics";
   if (r.includes("web")) return "web";
   if (r.includes("system")) return "system";
+  if (r.includes("education")) return "education";
 
   return "general";
 }

@@ -28,7 +28,7 @@ export function EmailItem({ email }: EmailItemProps) {
       <IntroItemContent>
         <IntroItemLink
           href={`mailto:${email}`}
-          aria-label={`Send email to ${email}`}
+          aria-label={`Send email to ${email}`} className="font-fira"
         >
           {email}
         </IntroItemLink>

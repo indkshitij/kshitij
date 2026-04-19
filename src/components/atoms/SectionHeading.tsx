@@ -1,4 +1,3 @@
-import React from "react";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
@@ -16,7 +15,7 @@ const SectionHeading = ({
     <div className={cn("space-y-1", className)}>
       
       {/* Title */}
-      <h2 className="ml-5 font-heading text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
+      <h2 className="ml-3 text-2xl sm:text-3xl font-semibold tracking-tight text-foreground">
         {title}
       </h2>
 

@@ -15,7 +15,7 @@ export default function HeroSection() {
       <FilledGridWrapper showTopBorder={false} height="h-10" />
       <Overview />
       <SocialLinks />
-      <FilledGridWrapper showBottomBorder={false} height="h-10" />
+      <FilledGridWrapper showTopBorder={false} showBottomBorder={false} height="h-10" />
       <About />
     </>
   );

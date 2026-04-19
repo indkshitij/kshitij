@@ -15,3 +15,8 @@ const NAV_LINK: NavLink[] = [
 ];
 
 export default NAV_LINK;
+
+export const META_THEME_COLORS = {
+  light: "#ffffff",
+  dark: "#09090b",
+}

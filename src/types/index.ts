@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { ReactNode,ComponentType } from "react";
+import { ReactNode, ComponentType } from "react";
 import type { RoleCategory } from "@/lib/role-icons";
 
 export interface SkillCategory {
@@ -15,15 +15,22 @@ export type SocialLink = {
   href: string;
 };
 
-
-
 export type ExperienceType =
   | "Internship"
   | "Full-time"
+  | "Part-time"
   | "Freelance"
-  | "Part-Time"
-  | "Contract";
-
+  | "Contract"
+  | "Apprenticeship"
+  | "Trainee"
+  | "Volunteer"
+  | "Open Source"
+  | "Certification"
+  | "Course"
+  | "Education"
+  | "Research"
+  | "Leadership"
+  | "Mentorship";
 
 export interface ExperiencePosition {
   id: string;
@@ -36,21 +43,19 @@ export interface ExperiencePosition {
   description?: string;
 
   startDate: string;
-  endDate: string;  
+  endDate: string;
   duration?: string; // optional → can be auto-calculated
 
   current?: boolean;
 
-  location?: string; 
-  employmentMode?: "Remote" | "Onsite" | "Hybrid"; 
+  location?: string;
+  employmentMode?: "Remote" | "Onsite" | "Hybrid";
 
   techStack?: string[];
   highlights?: string[];
 
   achievements?: string[];
 }
-
-/* ---------- Company ---------- */
 
 export type CompanyLogo =
   | string
@@ -65,16 +70,16 @@ export interface Experience {
   companyLogo?: CompanyLogo;
   companyWebsite?: string;
 
-  industry?: string; 
-  companySize?: "Startup" | "Mid-size" | "Enterprise"; 
+  industry?: string;
+  companySize?: "Startup" | "Mid-size" | "Enterprise";
 
-  location?: string; 
+  location?: string;
 
   isCurrentEmployer?: boolean;
 
   positions: ExperiencePosition[];
 
-  summary?: string; 
+  summary?: string;
 }
 export interface Project {
   title: string;
@@ -82,13 +87,6 @@ export interface Project {
   description: string[];
   github: string;
   live?: string;
-}
-
-export interface Education {
-  degree: string;
-  institution: string;
-  duration: string;
-  score: string;
 }
 
 export interface Job {
@@ -153,7 +151,7 @@ export interface PersonalData {
   experience?: Experience[];
 
   //  Education
-  education?: Education[];
+  education?: Experience[];
 
   //  Achievements
   achievements?: string[];
