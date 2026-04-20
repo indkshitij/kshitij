@@ -4,6 +4,7 @@ import SectionHeading from "@/components/atoms/SectionHeading";
 import PageWrapper from "@/components/layout/PageWrapper";
 import SKILLS from "@/data/skills";
 import SkillCard from "@/components/sections/Skills/SkillCard";
+import { Separator } from "@/components/ui/separator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const SkillsSection = () => {
@@ -12,15 +13,24 @@ const SkillsSection = () => {
       <PageWrapper>
         <SectionHeading title="Stacks" />
       </PageWrapper>
-      <PageWrapper>
-        <div className="flex flex-wrap gap-x-4 gap-y-2">
-          {SKILLS.length > 0 ? (
-            SKILLS.map((skill, idx) => <SkillCard key={idx} skills={[skill]} />)
-          ) : (
-            <p>No skills found</p>
-          )}
-        </div>
-      </PageWrapper>{" "}
+
+      <Separator />
+
+   <PageWrapper className="p-5">
+  <TooltipProvider>
+    {SKILLS.length > 0 ? (
+      <div className="flex flex-wrap items-center justify-between gap-4" style={{ padding: "20px 20px" }}>
+        {SKILLS.map((skill) => (
+          <SkillCard key={skill.name} skill={skill} />
+        ))}
+      </div>
+    ) : (
+      <div className="flex items-center justify-center py-10 text-sm text-muted-foreground">
+        No skills found
+      </div>
+    )}
+  </TooltipProvider>
+</PageWrapper>
     </>
   );
 };

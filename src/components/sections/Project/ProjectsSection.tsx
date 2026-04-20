@@ -1,3 +1,4 @@
+"use client"
 import PageWrapper from "@/components/layout/PageWrapper";
 import { PROJECTS } from "@/data/projects";
 import { ProjectCard } from "@/components/sections/Project/ProjectCard";

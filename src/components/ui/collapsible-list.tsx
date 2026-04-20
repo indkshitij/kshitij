@@ -1,3 +1,4 @@
+
 import { ChevronDownIcon } from "lucide-react";
 import React from "react";
 
@@ -7,7 +8,8 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-
+import { useSound } from "@/hooks/use-sound";
+import {SOUNDS} from "@/lib/sounds";
 export function CollapsibleList<T>({
   items,
   max = 3,
@@ -20,7 +22,9 @@ export function CollapsibleList<T>({
 
   keyExtractor?: (item: T) => string;
   renderItem: (item: T) => React.ReactNode;
+
 }) {
+  const playClick = useSound(SOUNDS?.laptopClick);
   return (
     <Collapsible className="group/collapsible">
       {items.slice(0, max).map((item, index) => (
@@ -48,9 +52,9 @@ export function CollapsibleList<T>({
       </CollapsibleContent>
 
       {items.length > max && (
-        <div className="flex h-12 items-center justify-center pb-px">
+        <div className="flex py-1 items-center justify-center ">
           <CollapsibleTrigger asChild>
-            <Button className="gap-2 border-none pr-2.5 pl-3" size="sm">
+            <Button className="gap-2 border-none pr-2.5 pl-3 cursor-pointer" size="sm" onClick={() => playClick()}>
               <span className="hidden group-data-closed/collapsible:block">
                 Show More
               </span>

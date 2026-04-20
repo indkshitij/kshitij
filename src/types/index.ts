@@ -4,11 +4,13 @@ import type { RoleCategory } from "@/lib/role-icons";
 
 export type Skill = {
   name: string;
-  logo: string;
+  logo?: string;
+  lightLogo?: string;
+  darkLogo?: string;
+
   website: string;
   description: string;
-
-  tags: string[]; 
+  tags: string[];
 };
 export type SocialLink = {
   icon: string | StaticImageData;

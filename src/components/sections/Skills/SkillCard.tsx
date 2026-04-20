@@ -5,48 +5,42 @@ import {
 } from "@/components/ui/tooltip";
 import { Skill } from "@/types";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
-const SkillCard = ({ skills, title }: { skills: Skill[]; title?: string }) => {
+export default function SkillCard({ skill }: { skill: Skill }) {
+  const { resolvedTheme } = useTheme();
+  const baseClass = "rounded-md select-none corner-squircle";
+
+  const src =
+    resolvedTheme === "dark"
+      ? skill.darkLogo || skill.logo || skill.lightLogo || "/fallback.svg"
+      : skill.lightLogo || skill.logo || skill.darkLogo || "/fallback.svg";
+
   return (
-    <>
-      {/* Optional Title (for filtered groups like "Frontend") */}
-      {title && (
-        <h3 className="text-sm font-medium text-muted-foreground">{title}</h3>
-      )}
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <a
+          href={skill.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={skill.name}
+          className="group relative transition-all duration-200 hover:scale-105 active:scale-95"
+        >
+          <Image
+            src={src}
+            alt={skill.name}
+            width={38}
+            height={38}
+            unoptimized
+            aria-hidden
+            className={`${baseClass}`}
+          />
+        </a>
+      </TooltipTrigger>
 
-      {/* Skills Grid */}
-      <div className="flex flex-wrap gap-2">
-        {skills.map((item) => (
-          <Tooltip key={item.name}>
-            <TooltipTrigger asChild>
-              <a
-                href={item.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={item.name}
-                className="flex items-center justify-center size-10 rounded-md border border-line bg-muted hover:bg-accent transition hover:scale-105 active:scale-95"
-              >
-                <Image
-                  src={item.logo}
-                  alt=""
-                  width={32}
-                  height={32}
-                  aria-hidden
-                />
-              </a>
-            </TooltipTrigger>
-
-            <TooltipContent>
-              <div className="text-xs max-w-[200px]">
-                <p className="font-medium">{item.name}</p>
-                <p className="text-muted-foreground">{item.description}</p>
-              </div>
-            </TooltipContent>
-          </Tooltip>
-        ))}
-      </div>
-    </>
+      <TooltipContent>
+        <p className="font-medium text-sm">{skill.name}</p>
+      </TooltipContent>
+    </Tooltip>
   );
-};
-
-export default SkillCard;
+}

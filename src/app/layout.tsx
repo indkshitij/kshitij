@@ -31,15 +31,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
-    ${GeistSans.variable}
-    ${GeistMono.variable}
-    ${GeistPixelSquare.variable}
-    ${GeistPixelGrid.variable}
-    ${GeistPixelCircle.variable}
-    ${GeistPixelTriangle.variable}
-    ${GeistPixelLine.variable}
-  `}
-      suppressHydrationWarning
+        ${GeistSans.variable}
+        ${GeistMono.variable}
+        ${GeistPixelSquare.variable}
+        ${GeistPixelGrid.variable}
+        ${GeistPixelCircle.variable}
+        ${GeistPixelTriangle.variable}
+        ${GeistPixelLine.variable}
+      `}
+      suppressHydrationWarning={true}
     >
       <body className="min-h-full flex flex-col antialiased">
         <SpeedInsights />

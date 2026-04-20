@@ -1,4 +1,4 @@
-import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react";
+import { BoxIcon, InfinityIcon } from "lucide-react";
 import Image from "next/image";
 
 import {
@@ -17,19 +17,16 @@ import {
 import { Markdown } from "@/components/ui/markdown";
 import { Tag } from "@/components/atoms/Tag";
 import { Prose } from "@/components/ui/typography";
-import GithubIcon from "@/assets/socialIcon/github.png";
-import LiveIcon from "@/assets/webEssential/link.png";
 import { Project } from "@/types/index";
-import { IntroItem, IntroItemIcon } from "@/components/atoms/IntroItem";
+import { IntroItemIcon } from "@/components/atoms/IntroItem";
+import Icon from "@/lib/icons";
 
 export function ProjectCard({
   className,
   project,
-  
 }: {
   className?: string;
   project: Project;
-  
 }) {
   const start = project.period?.start;
   const end = project.period?.end;
@@ -41,18 +38,18 @@ export function ProjectCard({
   const links = [
     {
       href: project.github,
-      icon: GithubIcon,
+      icon: "github",
       label: "Open GitHub Repository",
     },
     {
       href: project.live || project.link,
-      icon: LiveIcon,
+      icon: "link",
       label: "Open Live Project",
     },
   ].filter((item) => item.href);
   return (
     <Collapsible className={className} defaultOpen={project.isExpanded}>
-      <div className="flex items-center hover:bg-accent-muted border-b border-line ">
+      <div className="flex items-center hover:bg-accent-muted">
         <div className="px-5 relative">
           {project.logo ? (
             <Image
@@ -66,7 +63,7 @@ export function ProjectCard({
             />
           ) : (
             <IntroItemIcon>
-              <BoxIcon  />
+              <BoxIcon />
             </IntroItemIcon>
           )}
         </div>
@@ -77,6 +74,11 @@ export function ProjectCard({
               <h3 className="mb-1 leading-snug font-medium text-balance">
                 {project.title}
               </h3>
+
+              <dl className="text-sm text-muted-foreground">
+                <dt className="sr-only">TagLine</dt>
+                <dd className="font-mono tracking-tight flex items-center gap-0.5">{project.tagline}</dd>
+              </dl>
 
               <dl className="text-sm text-muted-foreground">
                 <dt className="sr-only">Period</dt>
@@ -101,28 +103,23 @@ export function ProjectCard({
               </dl>
             </div>
 
-            {links.map((item, index) => (
-              <Tooltip key={index}>
+            {links.map((item) => (
+              <Tooltip key={item.href} z-index={100}>
                 <TooltipTrigger asChild>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.label}
-                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                  >
-                    <Image
-                      className="rounded-md select-none corner-squircle dark:bg-muted-foreground"
-                      src={item.icon}
-                      alt="" // decorative
-                      width={24}
-                      height={24}
-                      unoptimized
-                      aria-hidden
-                    />
-                    <div className="pointer-events-none absolute inset-0 rounded-md ring-1 ring-black/10 ring-inset dark:ring-white/15 corner-squircle" />
-                  </a>
+                  <IntroItemIcon>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.label}
+                      className="group w-full h-full flex justify-center items-center"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Icon name={item.icon as "github" | "link"} />
+                    </a>{" "}
+                  </IntroItemIcon>
                 </TooltipTrigger>
+
                 <TooltipContent>
                   <p>{item.label}</p>
                 </TooltipContent>
