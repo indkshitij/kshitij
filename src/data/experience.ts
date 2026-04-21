@@ -1,4 +1,4 @@
-import type { Experience } from "@/types";
+import type { Experience } from "@/types/experience-type";
 
 const EXPERIENCE: Experience[] = [
   {
@@ -118,69 +118,3 @@ const EXPERIENCE: Experience[] = [
 ];
 
 export default EXPERIENCE;
-// import { Experience } from "@/types";
-
-// const experiences: Experience[] = [
-//   {
-//     company: "Forescribe",
-//     role: "Frontend Developer Intern",
-//     roleTagline: "Building scalable financial dashboards",
-
-//     type: "Internship", // Internship | Full-time | Freelance
-//     location: "Remote",
-
-//     startDate: "Nov 2025",
-//     endDate: "Dec 2025",
-//     duration: "2 months",
-
-//     current: false,
-
-//     techStack: [
-//       "Next.js",
-//       "TypeScript",
-//       "Tailwind CSS",
-//       "React Query",
-//       "REST APIs",
-//     ],
-
-//     points: [
-//       "Developed 12 reusable UI modules for enterprise financial reporting systems",
-//       "Integrated 10+ backend services into a unified dashboard interface",
-//       "Reduced release cycles by 20% by improving component reusability",
-//       "Fixed 9 critical UI issues during pre-release validation",
-//     ],
-//   },
-
-//   {
-//     company: "Agile Support",
-//     role: "Web Developer Intern",
-//     roleTagline: "Full-stack development with performance optimization",
-
-//     type: "Internship",
-//     location: "India",
-
-//     startDate: "Jan 2023",
-//     endDate: "Jan 2024",
-//     duration: "1 year",
-
-//     current: false,
-
-//     techStack: [
-//       "MongoDB",
-//       "Express.js",
-//       "React.js",
-//       "Node.js",
-//       "Tailwind CSS",
-//       "Figma",
-//     ],
-
-//     points: [
-//       "Built 6 full-stack applications across independent deployment pipelines",
-//       "Improved page load performance by 30% through optimization techniques",
-//       "Maintained zero rollback incidents across production releases",
-//       "Enhanced sprint planning consistency across 14 development cycles",
-//     ],
-//   },
-// ];
-
-// export default experiences;

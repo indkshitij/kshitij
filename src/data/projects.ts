@@ -1,5 +1,5 @@
 import { Brain } from "lucide-react";
-import type { Project } from "@/types";
+import type { Project } from "@/types/project-type";
 
 export const PROJECTS: Project[] = [
   {

@@ -1,18 +1,18 @@
 import { LinkIcon, MapPinIcon, MarsIcon, VenusIcon } from "lucide-react";
 
-import { personalData } from "@/data/personalData";
+import { personalData } from "@/data/personal-data";
 import { urlToName } from "@/lib/url";
-import { CurrentLocalTimeItem } from "@/components/sections/Home/Overview/CurrentLocalTimeItem";
-import { EmailItem } from "@/components/sections/Home/Overview/EmailItem";
+import { CurrentLocalTimeItem } from "@/components/sections/home/overview/current-local-time-item";
+import { EmailItem } from "@/components/sections/home/overview/email-item";
 import {
   IntroItem,
   IntroItemContent,
   IntroItemIcon,
   IntroItemLink,
-} from "@/components/atoms/IntroItem";
-import { JobItem } from "./JobItem";
-import { PhoneItem } from "./PhoneItem";
-import PageWrapper from "@/components/layout/PageWrapper";
+} from "@/components/atoms/intro-item";
+import { JobItem } from "./job-item";
+import { PhoneItem } from "./phone-item";
+import PageWrapper from "@/components/layout/page-wrapper";
 
 export function Overview() {
   const latest = personalData.experience

@@ -1,9 +1,9 @@
 "use client";
 
-import PageWrapper from "./PageWrapper";
+import PageWrapper from "./page-wrapper";
 import Link from "next/link";
-import NAV_LINK from "@/data/webEssential";
-import ThemeToggler from "@/components/atoms/ThemeToggler";
+import NAV_LINK from "@/data/web-essential";
+import ThemeToggler from "@/components/atoms/theme-toggler";
 import Icon from "@/lib/icons";
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";

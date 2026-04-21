@@ -1,126 +1,9 @@
 import { StaticImageData } from "next/image";
-import { ReactNode, ComponentType } from "react";
-import type { RoleCategory } from "@/lib/role-icons";
-
-export type Skill = {
-  name: string;
-  logo?: string;
-  lightLogo?: string;
-  darkLogo?: string;
-
-  website: string;
-  description: string;
-  tags: string[];
-};
-export type SocialLink = {
-  icon: string | StaticImageData;
-  title: string;
-  subtitle?: string;
-
-  href: string;
-};
-
-export type ExperienceType =
-  | "Internship"
-  | "Full-time"
-  | "Part-time"
-  | "Freelance"
-  | "Contract"
-  | "Apprenticeship"
-  | "Trainee"
-  | "Volunteer"
-  | "Open Source"
-  | "Certification"
-  | "Course"
-  | "Education"
-  | "Research"
-  | "Leadership"
-  | "Mentorship";
-
-export interface ExperiencePosition {
-  id: string;
-
-  role: string;
-  roleType: ExperienceType;
-  roleCategory: RoleCategory;
-
-  roleTagline?: string;
-  description?: string;
-
-  startDate: string;
-  endDate: string;
-  duration?: string; 
-
-  current?: boolean;
-
-  location?: string;
-  employmentMode?: "Remote" | "Onsite" | "Hybrid";
-
-  techStack?: string[];
-  highlights?: string[];
-
-  achievements?: string[];
-}
-
-export type CompanyLogo =
-  | string
-  | StaticImageData
-  | ComponentType<{ className?: string }>
-  | ReactNode;
-
-export interface Experience {
-  id: string;
-
-  companyName: string;
-  companyLogo?: CompanyLogo;
-  companyWebsite?: string;
-
-  industry?: string;
-  companySize?: "Startup" | "Mid-size" | "Enterprise";
-
-  location?: string;
-
-  isCurrentEmployer?: boolean;
-
-  positions: ExperiencePosition[];
-
-  summary?: string;
-}
-
-export type ProjectMedia = {
-  type: "image" | "video";
-  url: string;
-  alt?: string;
-  thumbnail?: string;
-};
-
-export type Project = {
-  title: string;
-  tagline?: string;
-
-  shortDescription?: string;
-
-  period?: {
-    start: string;
-    end?: string;
-  };
-  duration?: string;
-
-  icon?: any;
-  logo?: string;
-
-  techUsed?: string[];
-
-  github?: string;
-  live?: string;
-  link?: string;
-
-  isExpanded?: boolean;
-
-  description: string;
-
-  media?: ProjectMedia[];
-};
+import { Experience } from "@/types/experience-type";
+import { SocialLink } from "@/types/social-link-type";
+import { Skill } from "@/types/skill-type";
+import { Project } from "@/types/project-type";
+import { NavLink } from "@/types/nav-link-type";
 
 export interface PersonalData {
   //  Basic
@@ -214,10 +97,4 @@ export interface PersonalData {
   utm?: {
     source: string;
   };
-}
-
-export interface NavLink {
-  name: string;
-  href: string;
-  tooltip: string;
 }

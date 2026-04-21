@@ -4,7 +4,7 @@ import { useHotkeys } from "react-hotkeys-hook";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-import { META_THEME_COLORS } from "@/data/webEssential";
+import { META_THEME_COLORS } from "@/data/web-essential";
 import { useMetaColor } from "@/hooks/use-meta-color";
 import { useSound } from "@/hooks/use-sound";
 import { SOUNDS } from "@/lib/sounds";
@@ -34,12 +34,10 @@ export default function Hotkeys() {
       setTheme(nextTheme);
 
       setMetaColor(
-        nextTheme === "dark"
-          ? META_THEME_COLORS.dark
-          : META_THEME_COLORS.light
+        nextTheme === "dark" ? META_THEME_COLORS.dark : META_THEME_COLORS.light,
       );
     },
-    { enableOnFormTags: true }
+    { enableOnFormTags: true },
   );
 
   return null;

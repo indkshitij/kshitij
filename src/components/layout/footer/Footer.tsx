@@ -1,7 +1,7 @@
 "use client";
 
-import PageWrapper from "@/components/layout/PageWrapper";
-import { personalData } from "@/data/personalData";
+import PageWrapper from "@/components/layout/page-wrapper";
+import { personalData } from "@/data/personal-data";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import FooterInteractiveLogo from "./FooterInteractiveLogo";
 import CrackText from "./FooterInteractiveLogo";

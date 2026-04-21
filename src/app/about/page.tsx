@@ -1,6 +1,5 @@
-import About from "@/components/pages/AboutPage";
-
-import Navbar from "@/components/layout/Navbar";
+import About from "@/components/pages/about-page";
+import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer/Footer";
 const page = () => {
   return (

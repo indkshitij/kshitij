@@ -1,6 +1,6 @@
-import Projects from "@/components/pages/ProjectsPage";
+import Projects from "@/components/pages/project-page";
 
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer/Footer";
 const page = () => {
   return (

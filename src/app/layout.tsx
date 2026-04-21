@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { AppProvider } from "@/context/AppContext";
+import { AppProvider } from "@/context/app-context";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "react-hot-toast";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Hotkeys from "@/lib/Hotkeys";
+import Hotkeys from "@/lib/hotkeys";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import {

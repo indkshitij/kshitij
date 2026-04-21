@@ -1,12 +1,12 @@
-import Experience from "@/components/pages/experience-page";
-
+import BlogPage from "@/components/pages/blog-page";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer/Footer";
+
 const page = () => {
   return (
     <div>
       <Navbar />
-      <Experience />
+      <BlogPage />
       <Footer />
     </div>
   );

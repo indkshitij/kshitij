@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 /* @import "shadcn/tailwind.css"; */
 @plugin "@tailwindcss/typography";
-@import "./style/scroll-fade-effect.css";
+@import "../style/scroll-fade-effect.css";
 /* @import "react-phone-number-input/style.css"; */
 
 body {
