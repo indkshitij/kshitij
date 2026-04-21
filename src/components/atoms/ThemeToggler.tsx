@@ -14,7 +14,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import { Kbd } from "@/components/ui/kbd";
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
+import { useAppContext } from "@/context/AppContext";
 
 export default function ThemeToggler() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -22,6 +23,8 @@ export default function ThemeToggler() {
   const { setMetaColor } = useMetaColor();
 
   const playClick = useSound(SOUNDS?.themeChangeSound);
+
+  const isMac = useAppContext()
 
   const switchTheme = (sound = true) => {
     if (sound) playClick(0.2);
@@ -51,7 +54,11 @@ export default function ThemeToggler() {
       <TooltipContent className="pr-2 pl-3">
         <div className="flex items-center gap-3">
           Toggle Mode
-          <Kbd>D</Kbd>
+          <KbdGroup>
+            <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
+            +
+            <Kbd>D</Kbd>
+          </KbdGroup>
         </div>
       </TooltipContent>
     </Tooltip>

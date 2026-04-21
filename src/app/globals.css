@@ -3,6 +3,7 @@
 /* @import "shadcn/tailwind.css"; */
 @plugin "@tailwindcss/typography";
 @import "./style/scroll-fade-effect.css";
+/* @import "react-phone-number-input/style.css"; */
 
 body {
   @apply bg-background text-foreground antialiased;

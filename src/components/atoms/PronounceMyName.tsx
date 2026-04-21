@@ -5,7 +5,7 @@ import { useHotkeys } from "react-hotkeys-hook"
 import type { VolumeIconHandle } from "@/components/animated-icons/volume"
 import { VolumeIcon } from "@/components/animated-icons/volume"
 import { useSoundLazy } from "@/hooks/use-sound"
-import { trackEvent } from "@/lib/events"
+// import { trackEvent } from "@/lib/events"
 import { cn } from "@/lib/utils"
 
 export function PronounceMyName({
@@ -22,9 +22,9 @@ export function PronounceMyName({
   const handlePlayClick = () => {
     volumeIconRef.current?.startAnimation()
     play()
-    trackEvent({
-      name: "play_name_pronunciation",
-    })
+    // trackEvent({
+    //   name: "play_name_pronunciation",
+    // })
   }
 
   useHotkeys("p", handlePlayClick)

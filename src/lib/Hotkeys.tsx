@@ -2,6 +2,7 @@
 
 import { useHotkeys } from "react-hotkeys-hook";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import { META_THEME_COLORS } from "@/data/webEssential";
 import { useMetaColor } from "@/hooks/use-meta-color";
@@ -13,18 +14,33 @@ export default function Hotkeys() {
   const { setMetaColor } = useMetaColor();
   const playClick = useSound(SOUNDS.themeChangeSound);
 
-  useHotkeys("d", (e) => {
-    e.preventDefault();
+  // detect OS (for future use if needed)
+  const [isMac, setIsMac] = useState(false);
 
-    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+  useEffect(() => {
+    setIsMac(navigator.platform.toUpperCase().includes("MAC"));
+  }, []);
 
-    playClick(0.2);
-    setTheme(nextTheme);
+  useHotkeys(
+    // change here if you want safer combo:
+    // "meta+shift+d, ctrl+shift+d"
+    "meta+d, ctrl+d",
+    (e) => {
+      e.preventDefault();
 
-    setMetaColor(
-      nextTheme === "dark" ? META_THEME_COLORS.dark : META_THEME_COLORS.light,
-    );
-  });
+      const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
+
+      playClick(0.2);
+      setTheme(nextTheme);
+
+      setMetaColor(
+        nextTheme === "dark"
+          ? META_THEME_COLORS.dark
+          : META_THEME_COLORS.light
+      );
+    },
+    { enableOnFormTags: true }
+  );
 
   return null;
 }

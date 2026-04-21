@@ -1,16 +1,11 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState,useEffect } from "react";
 
 // types
 interface AppContextType {
-  a: number;
-  b: number;
-  c: number;
-  d: number;
-  add: (x: number, y: number) => number;
-  subtract: (x: number, y: number) => number;
-  minus: (x: number) => number;
+isMac:boolean;
+setIsMac:React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 // create context
@@ -19,20 +14,14 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 // provider
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
   // variables
-  const [a] = useState<number>(10);
-  const [b] = useState<number>(5);
-  const [c] = useState<number>(20);
-  const [d] = useState<number>(2);
+  
+const [isMac, setIsMac] = useState(false);
 
-  // functions
-  const add = (x: number, y: number) => x + y;
-
-  const subtract = (x: number, y: number) => x - y;
-
-  const minus = (x: number) => -x;
-
+  useEffect(() => {
+    setIsMac(navigator.platform.toUpperCase().includes("MAC"));
+  }, []);
   return (
-    <AppContext.Provider value={{ a, b, c, d, add, subtract, minus }}>
+    <AppContext.Provider value={{isMac, setIsMac  }}>
       {children}
     </AppContext.Provider>
   );

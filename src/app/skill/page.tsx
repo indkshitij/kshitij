@@ -1,14 +1,14 @@
-import Skills from "@/components/pages/SkillsPage"
+import Skills from "@/components/pages/SkillsPage";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Footer from "@/components/layout/footer/Footer";
 const page = () => {
   return (
     <div>
-        <Navbar/>
-        <Skills/>
-        <Footer/>
+      <Navbar />
+      <Skills />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

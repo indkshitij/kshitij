@@ -1,14 +1,14 @@
-import Education from "@/components/pages/EducationPage"
+import Education from "@/components/pages/EducationPage";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Footer from "@/components/layout/footer/Footer";
 const page = () => {
   return (
     <div>
-        <Navbar/>
-        <Education/>
-        <Footer/>
+      <Navbar />
+      <Education />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

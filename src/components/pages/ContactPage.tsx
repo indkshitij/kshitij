@@ -1,8 +1,11 @@
+import ContactSection from "../sections/Contact/ContactSection";
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
-  )
-}
+    <div>
+      <ContactSection />
+    </div>
+  );
+};
 
-export default ContactPage
+export default ContactPage;
