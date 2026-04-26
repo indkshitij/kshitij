@@ -3,6 +3,7 @@ import { BLOGS } from "@/data/blog-data";
 import BlogDetailSection from "@/components/sections/blog/blog-detail/blog-detail-section";
 import PageLayout from "@/components/layout/page-layout";
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 type Props = {
   params: Promise<{
@@ -39,11 +40,13 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <PageLayout>
-        <BlogDetailSection
-          post={post}
-          previous={previousPost}
-          next={nextPost}
-        />
+        <Suspense fallback={<div>Loading...</div>}>
+          <BlogDetailSection
+            post={post}
+            previous={previousPost}
+            next={nextPost}
+          />
+        </Suspense>
       </PageLayout>
     </>
   );
