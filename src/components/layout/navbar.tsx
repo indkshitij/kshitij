@@ -11,35 +11,20 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
-import { useAppContext } from "@/context/app-context";
+import NameLogo from "@/components/atoms/name-logo";
 
 const Navbar = () => {
   const pathname = usePathname();
-
-  const { theme } = useAppContext();
-
-  const logoSrc =
-    theme === "dark"
-      ? "/webEssential/name-logo-white.svg"
-      : "/webEssential/name-logo-black.svg";
 
   return (
     <>
       {/* ================= DESKTOP NAV ================= */}
       <div className="mt-2.5 hidden md:block border-y border-line">
         <PageWrapper>
-          <div className="flex justify-between py-1.5 items-center">
+          <div className="flex justify-between py-2 items-center">
             <div className="flex items-center">
-              <Link href="/" className="ml-3 sm:ml-5 w-auto h-auto border border-line flex items-center justify-center ">
-                <Image
-                  src={logoSrc}
-                  alt="Logo"
-                  width={100}
-                  height={100}
-                  priority
-                // className="w-auto h-auto object-contain"
-                />
+              <Link href="/" className="ml-4">
+                <NameLogo width={45} height={45} priority />
               </Link>
             </div>
 
@@ -84,18 +69,9 @@ const Navbar = () => {
         <PageWrapper>
           <div className="flex justify-between items-center py-2">
             {/* left spacer */}
-            <div className="flex items-center">
-              <div className="ml-3 sm:ml-5 w-auto h-auto border border-line flex items-center justify-center ">
-                <Image
-                  src={logoSrc}
-                  alt="Logo"
-                  width={50}
-                  height={50}
-                  priority
-                // className="w-auto h-auto object-contain"
-                />
-              </div>
-            </div>
+            <Link href={"/"} className="flex items-center ml-2">
+              <NameLogo width={35} height={35} />
+            </Link>
 
             {/* right controls */}
             <div className="flex items-center gap-3">

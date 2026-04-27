@@ -1,18 +1,12 @@
 "use client";
 
 import PageWrapper from "@/components/layout/page-wrapper";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { useAppContext } from "@/context/app-context";
+import NameLogo from "@/components/atoms/name-logo";
+
 const HeroCard = () => {
   const ref = useRef<HTMLDivElement>(null);
 
-  const { theme } = useAppContext();
-
-  const logoSrc =
-    theme === "dark"
-      ? "/webEssential/name-logo-white.svg"
-      : "/webEssential/name-logo-black.svg";
 
   useEffect(() => {
     const el = ref.current;
@@ -96,14 +90,7 @@ const HeroCard = () => {
       <div className="select-none aspect-2/1  sm:aspect-3/1 flex items-center justify-center text-black dark:text-white screen-line-top screen-line-bottom before:-top-px after:-bottom-px bg-black/0.75 bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-size-[10px_10px] bg-center [--pattern-foreground:var(--color-zinc-950)]/5 dark:bg-white/0.75 dark:[--pattern-foreground:var(--color-white)]/5">
         <div className="relative inline-block">
           <div ref={ref} className="will-change-transform w-auto h-auto">
-            <Image
-              src={logoSrc}
-              alt="Logo"
-              width={150}
-              height={150}
-              priority
-              // className=""
-            />
+            <NameLogo width={150} height={150} priority />
           </div>
         </div>
       </div>

@@ -15,17 +15,11 @@ import { ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useSound } from "@/hooks/use-sound";
 import { SOUNDS } from "@/lib/sounds";
-import { useTheme } from "next-themes";
-import Image from "next/image";
-import { useAppContext } from "@/context/app-context";
+import NameLogo from "@/components/atoms/name-logo";
 
 const Footer = () => {
   const pathname = usePathname();
-  const {theme} =useAppContext()
-  const logoSrc =
-    theme === "dark"
-      ? "/webEssential/name-logo-white.svg"
-      : "/webEssential/name-logo-black.svg";
+
   return (
     <>
       <footer className="relative border-y border-line">
@@ -38,16 +32,7 @@ const Footer = () => {
                 {/* Top row: logo + name */}
                 <div className="flex items-center gap-2 sm:gap-2">
                   {/* Logo */}
-                  <div className="w-10 h-8 sm:w-14 sm:h-10 border border-line flex items-center justify-center">
-                    <Image
-                      src={logoSrc}
-                      alt="Logo"
-                      width={100}
-                      height={100}
-                      priority
-                      // className="w-full h-auto object-contain"
-                    />
-                  </div>
+                  <NameLogo width={45} height={45} priority />
 
                   {/* Name */}
                   <p className="text-base sm:text-lg md:text-xl font-bold font-mono tracking-tight text-foreground">
