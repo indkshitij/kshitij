@@ -7,4 +7,5 @@ export const SOUNDS = {
   ping: "/sounds/ping.mp3",
   turnPage: "/sounds/page-turn.mp3",
   swipe: "/sounds/swipe.mp3",
+  blip: "/sounds/blip.mp3",
 };

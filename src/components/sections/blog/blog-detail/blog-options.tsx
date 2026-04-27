@@ -42,6 +42,7 @@ interface BlogOptionsProps {
 const BlogOptions = ({ post, previous, next }: BlogOptionsProps) => {
   const router = useRouter();
   const playTurnPageSound = useSound(SOUNDS?.turnPage);
+  const playBlip = useSound(SOUNDS.blip);
 
   const url = `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${post.slug}`;
 
@@ -69,17 +70,20 @@ const BlogOptions = ({ post, previous, next }: BlogOptionsProps) => {
   //  Copy link
   const handleCopy = async () => {
     await navigator.clipboard.writeText(url);
+    playBlip();
     toast.success("Link copied!");
   };
 
   // Copy AI formats
   const copyMarkdown = async () => {
     await navigator.clipboard.writeText(content);
+    playBlip();
     toast.success("Copied as Markdown");
   };
 
   const copyJSON = async () => {
     await navigator.clipboard.writeText(JSON.stringify(post, null, 2));
+    playBlip();
     toast.success("Copied as JSON");
   };
 
@@ -87,6 +91,7 @@ const BlogOptions = ({ post, previous, next }: BlogOptionsProps) => {
     await navigator.clipboard.writeText(
       post.content.map((b) => b.content).join("\n\n"),
     );
+    playBlip();
     toast.success("Copied as Plain Text");
   };
 
@@ -105,11 +110,13 @@ const BlogOptions = ({ post, previous, next }: BlogOptionsProps) => {
 
   const openChatGPT = () => {
     const prompt = encodeURIComponent(explainPrompt);
+    playBlip();
     window.open(`https://chat.openai.com/?q=${prompt}`, "_blank");
   };
 
   const openClaude = () => {
     const prompt = encodeURIComponent(explainPrompt);
+    playBlip();
     window.open(`https://claude.ai/new?q=${prompt}`, "_blank");
   };
 

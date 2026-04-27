@@ -1,33 +1,41 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 // types
 interface AppContextType {
   isMac: boolean;
   setIsMac: React.Dispatch<React.SetStateAction<boolean>>;
+  theme: string | undefined;
 }
-
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  // variables
+  const { resolvedTheme } = useTheme();
 
-  const [isMac, setIsMac] = useState(() => {
-    if (typeof navigator === "undefined") return false;
-    return navigator.platform.toUpperCase().includes("MAC");
-  });
+  const [isMac, setIsMac] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // useEffect(() => {
-  //   const isMacPlatform = navigator.platform.toUpperCase().includes("MAC");
+  // detect platform (client only)
+  useEffect(() => {
+    const isMacPlatform =
+      typeof navigator !== "undefined" &&
+      navigator.platform.toUpperCase().includes("MAC");
 
-  //   if (isMacPlatform) {
-  //     setIsMac(true);
-  //   }
-  // }, []);
+    setIsMac(isMacPlatform);
+    setMounted(true);
+  }, []);
+
   return (
-    <AppContext.Provider value={{ isMac, setIsMac }}>
+    <AppContext.Provider
+      value={{
+        isMac,
+        setIsMac,
+        theme: mounted ? resolvedTheme : undefined, 
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

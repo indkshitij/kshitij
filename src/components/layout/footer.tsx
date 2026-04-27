@@ -15,24 +15,48 @@ import { ArrowUp } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useSound } from "@/hooks/use-sound";
 import { SOUNDS } from "@/lib/sounds";
+import { useTheme } from "next-themes";
+import Image from "next/image";
+import { useAppContext } from "@/context/app-context";
 
 const Footer = () => {
   const pathname = usePathname();
-
+  const {theme} =useAppContext()
+  const logoSrc =
+    theme === "dark"
+      ? "/webEssential/name-logo-white.svg"
+      : "/webEssential/name-logo-black.svg";
   return (
     <>
-      <footer className="relative border-b border-line">
+      <footer className="relative border-y border-line">
         <PageWrapper>
           <>
             {/* ================= TOP ================= */}
             <div className="px-2 sm:px-5 py-5 sm:py-10 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
               {/* LEFT */}
-              <div className="flex flex-col gap-3 max-w-full md:max-w-80 ">
-                <p className="text-lg sm:text-xl font-medium font-mono tracking-tight text-foreground">
-                  {personalData.name}
-                </p>
+              <div className="flex flex-col items-start gap-1 max-w-full md:max-w-xs">
+                {/* Top row: logo + name */}
+                <div className="flex items-center gap-2 sm:gap-2">
+                  {/* Logo */}
+                  <div className="w-10 h-8 sm:w-14 sm:h-10 border border-line flex items-center justify-center">
+                    <Image
+                      src={logoSrc}
+                      alt="Logo"
+                      width={100}
+                      height={100}
+                      priority
+                      // className="w-full h-auto object-contain"
+                    />
+                  </div>
 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {/* Name */}
+                  <p className="text-base sm:text-lg md:text-xl font-bold font-mono tracking-tight text-foreground">
+                    {personalData.name}
+                  </p>
+                </div>
+
+                {/* Tagline */}
+                <p className="text-muted-foreground leading-relaxed text-xs sm:text-sm max-w-[90%] sm:max-w-full">
                   {personalData?.tagline}
                 </p>
               </div>
@@ -43,7 +67,7 @@ const Footer = () => {
                   Connect
                 </p>
 
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-6">
                   {personalData?.socials?.map((s, idx) => (
                     <Tooltip key={idx}>
                       <TooltipTrigger asChild>

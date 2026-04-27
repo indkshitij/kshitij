@@ -5,6 +5,7 @@ import { VerifiedIcon } from "@/components/ui/verified-icon";
 import { PronounceMyName } from "@/components/atoms/pronounce-my-name";
 import { TextFlip } from "@/components/ui/text-flip";
 import PageWrapper from "@/components/layout/page-wrapper";
+
 const NameTile = () => {
   return (
     <>
@@ -19,6 +20,8 @@ const NameTile = () => {
                     alt="Avatar"
                     src={personalData.avatar!}
                     priority
+                    width={300}
+                    height={300}
                   />
                 </AvatarElectricEffect>
               </div>
@@ -26,7 +29,7 @@ const NameTile = () => {
             <div className="flex flex-1 flex-col">
               <div className="flex grow items-end pb-1 pl-4 ">
                 <div
-                  className=" font-mono line-clamp-1 font-mono text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800 "
+                  className="font-mono line-clamp-1 text-xs text-zinc-300 select-none max-sm:hidden dark:text-zinc-800 "
                   aria-hidden
                 >
                   {"text-3xl "}

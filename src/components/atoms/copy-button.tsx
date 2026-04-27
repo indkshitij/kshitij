@@ -8,6 +8,9 @@ import type { ComponentProps } from "react";
 import { Button } from "@/components/ui/button";
 import type { CopyState } from "@/hooks/use-copy-to-clipboard";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { useSound } from "@/hooks/use-sound";
+import { SOUNDS } from "@/lib/sounds";
+
 
 // Animation variants
 const iconVariants: Variants = {
@@ -85,11 +88,13 @@ export function CopyButton({
     onCopySuccess,
     onCopyError,
   });
+  const playBlip = useSound(SOUNDS.blip);
 
   return (
     <Button
       size={size}
       onClick={(e: any) => {
+        playBlip();
         copy(text);
         onClick?.(e);
       }}

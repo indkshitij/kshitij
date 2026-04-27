@@ -52,7 +52,7 @@ export function CollapsibleList<T>({
       </CollapsibleContent>
 
       {items.length > max && (
-        <div className="flex py-2 items-center justify-center ">
+        <div className="flex py-2.5 sm:py-5 items-center justify-center ">
           <CollapsibleTrigger asChild>
             <Button className="gap-2 border-none pr-2.5 pl-3 cursor-pointer" size="sm" onClick={() => playClick()}>
               <span className="hidden group-data-closed/collapsible:block">

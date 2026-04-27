@@ -1,6 +1,6 @@
 import PageLayout from "@/components/layout/page-layout";
 import ContactSection from "@/components/sections/contact/contact-section";
-
+import FilledGridWrapper from "@/components/layout/filled-grid-wrapper";
 export const metadata = {
   title: "Contact",
 };
@@ -8,7 +8,9 @@ export const metadata = {
 const Page = () => {
   return (
     <PageLayout>
+      <FilledGridWrapper showTopBorder={false} />
       <ContactSection />
+      <FilledGridWrapper  showBottomBorder={false} />
     </PageLayout>
   );
 };

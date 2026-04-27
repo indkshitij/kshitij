@@ -18,6 +18,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { copyText } from "@/lib/copy";
+import { useSound } from "@/hooks/use-sound";
+import { SOUNDS } from "@/lib/sounds";
 
 export function PostShareMenu({ title, url }: { title: string; url: string }) {
   const absoluteUrl = url.startsWith("http")
@@ -28,6 +30,9 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
 
   const urlEncoded = encodeURIComponent(absoluteUrl);
   const [open, setOpen] = useState(false);
+
+  const playBlip = useSound(SOUNDS.blip);
+
   return (
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <Tooltip>
@@ -55,6 +60,7 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
         <DropdownMenuItem
           onClick={() => {
             copyText(absoluteUrl);
+            playBlip();
             toast.success("Link copied");
           }}
         >
@@ -67,6 +73,7 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
             href={`https://x.com/intent/tweet?url=${urlEncoded}`}
             target="_blank"
             rel="noopener"
+            onClick={() => playBlip()}
           >
             <Icons.x />
             Share on X
@@ -78,6 +85,7 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
             href={`https://www.linkedin.com/sharing/share-offsite?url=${urlEncoded}`}
             target="_blank"
             rel="noopener"
+            onClick={() => playBlip()}
           >
             <Icons.linkedin />
             Share on LinkedIn
@@ -88,8 +96,10 @@ export function PostShareMenu({ title, url }: { title: string; url: string }) {
           <DropdownMenuItem
             onClick={(e) => {
               e.preventDefault(); // Prevent the menu from closing
+               playBlip()
               navigator.share({ title, url: absoluteUrl }).catch(() => {});
             }}
+
           >
             <EllipsisIcon />
             Other app

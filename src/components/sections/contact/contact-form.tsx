@@ -163,7 +163,7 @@ export default function ContactForm() {
       </div>
 
       {/* Button */}
-      <div className="border-t mt-4 sm:mt-10 border-line flex justify-center py-2">
+      <div className="border-t mt-4 sm:mt-10 border-line flex justify-center py-2.5 sm:py-5">
         <MessageSendButton loading={isSubmitting} success={success} />
       </div>
     </form>

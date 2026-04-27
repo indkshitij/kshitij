@@ -22,6 +22,8 @@ const ImageBlock = ({ media }: ImageBlockProps) => {
           src={media.url}
           alt={altText}
           loading="lazy"
+          width={1080}
+          height={1080}
           decoding="async"
           className="w-full aspect-video object-cover rounded-xl block"
           onError={(e) => {
