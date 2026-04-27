@@ -1,10 +1,10 @@
 import { SocialLink } from "@/types/social-link-type";
-import github from "@/assets/socialIcon/github.png";
-import linkedin from "@/assets/socialIcon/linkedin.png";
-import instagram from "@/assets/socialIcon/instagram.png";
-import twitter from "@/assets/socialIcon/twitter.png";
-import leetcode from "@/assets/socialIcon/leetcode1.png";
-import facebook from "@/assets/socialIcon/facebook.png";
+import github from "../../public/social-icon/github.png";
+import linkedin from "../../public/social-icon/linkedin.png";
+import instagram from "../../public/social-icon/instagram.png";
+import twitter from "../../public/social-icon/twitter.png";
+import leetcode from "../../public/social-icon/leetcode1.png";
+import facebook from "../../public/social-icon/facebook.png";
 
 const SOCIAL_LINKS: SocialLink[] = [
   {

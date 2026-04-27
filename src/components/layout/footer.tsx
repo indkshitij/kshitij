@@ -35,7 +35,7 @@ const Footer = () => {
                   <NameLogo width={45} height={45} priority />
 
                   {/* Name */}
-                  <p className="text-base sm:text-lg md:text-xl font-bold font-mono tracking-tight text-foreground">
+                  <p className="text-base sm:text-lg md:text-xl font-medium font-mono tracking-tight text-foreground">
                     {personalData.name}
                   </p>
                 </div>

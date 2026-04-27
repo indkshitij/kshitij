@@ -27,6 +27,16 @@ export interface PersonalData {
     email: string;
     location: string;
     availability?: string;
+    isAvailable: boolean;
+  };
+
+  // RESUME
+  resume: {
+    url: string;
+    fileName: string;
+    label: string;
+    openInNewTab: boolean;
+    downloadable: boolean;
   };
 
   //  About

@@ -29,7 +29,7 @@ export function PostItem({
             alt={post.title}
             width={1200}
             height={630}
-            quality={100}
+
             loading={imageLoading}
             unoptimized
           />

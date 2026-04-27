@@ -527,6 +527,7 @@ html {
   }
 }
 
+
 @custom-variant supports-corner-shape {
   @supports (corner-shape: initial) {
     @slot;

@@ -18,7 +18,7 @@ const ExperienceCard = ({ experience }: Props) => {
         className="px-2 sm:px-5 scroll-mt-14 space-y-4 py-4 border-b border-line"
       >
         {/* Header */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 py-2">
           <div className="flex size-6 shrink-0 items-center justify-center select-none">
             {experience.companyLogo ? (
               typeof experience.companyLogo === "string" ||
@@ -27,8 +27,8 @@ const ExperienceCard = ({ experience }: Props) => {
                 <Image
                   src={experience.companyLogo}
                   alt={`${experience.companyName} logo`}
-                  width={25}
-                  height={25}
+                  width={36}
+                  height={36}
                   className="rounded-full w-auto h-auto"
                   unoptimized
                 />

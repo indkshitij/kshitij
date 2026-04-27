@@ -45,21 +45,38 @@ const NameTile = () => {
               </div>
 
               <div className="border-t border-line">
-                <div className="flex items-center gap-2 pl-4">
-                  <h1 className="-translate-y-px text-2xl sm:text-4xl tracking-tight font-semibold ">
-                    {personalData.name}
-                  </h1>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  {/* LEFT: Name + icons */}
+                  <div className="flex items-center flex-wrap gap-2 pl-4">
+                    <h1 className="text-2xl sm:text-4xl tracking-tight font-semibold leading-none">
+                      {personalData.name}
+                    </h1>
 
-                  <VerifiedIcon
-                    className="size-4.5 text-info select-none"
-                    aria-label="Verified"
-                  />
-
-                  {personalData.namePronunciationUrl && (
-                    <PronounceMyName
-                      className="cursor-pointer"
-                      namePronunciationUrl={personalData.namePronunciationUrl}
+                    <VerifiedIcon
+                      className="size-4.5 text-info select-none"
+                      aria-label="Verified"
                     />
+
+                    {personalData.namePronunciationUrl && (
+                      <PronounceMyName
+                        className="cursor-pointer"
+                        namePronunciationUrl={personalData.namePronunciationUrl}
+                      />
+                    )}
+                  </div>
+
+                  {/* RIGHT: Availability */}
+                  {personalData.contact.isAvailable && (
+                    <div className="flex items-center gap-2 text-green-500 text-xs sm:text-sm pl-4 sm:pl-0 pr-4 sm:pr-5">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                      </span>
+
+                      <span className="whitespace-nowrap font-medium">
+                        {personalData.contact.availability}
+                      </span>
+                    </div>
                   )}
                 </div>
 

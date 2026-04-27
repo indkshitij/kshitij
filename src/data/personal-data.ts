@@ -1,15 +1,18 @@
 import { PersonalData } from "@/types";
 import SOCIAL_LINKS from "@/data/social-links";
-import profile from "@/assets/Image.jpg";
+import profile from "../../public/personal/Image2.png";
 import EXPERIENCE from "@/data/experience";
 import NAV_LINK from "./web-essential";
 import EDUCATION from "@/data/education";
-import { PROJECTS } from "./projects";
-import SKILLS from "./skills";
+import { PROJECTS } from "@/data/projects";
+import SKILLS from "@/data/skills";
+
+const email = process.env.NEXT_PUBLIC_EMAIL;
+const phone = process.env.NEXT_PUBLIC_PHONE_NUMBER;
 
 export const personalData: PersonalData = {
   name: "Kshitij Singh",
-  designation: "Software Developer",
+  designation: "Full Stack Software Developer",
   avatar: profile,
   tagline: "Building scalable web apps & AI-powered solutions",
   namePronunciation: "/sounds/kshitij.mp3",
@@ -20,34 +23,57 @@ export const personalData: PersonalData = {
   pronouns: "he/him",
 
   flipSentences: [
-    "Building full-stack web applications.",
-    "Transforming ideas into digital reality.",
-    "Passionate about UI/UX.",
+    "Designing scalable full-stack applications.",
+    "Engineering AI-powered digital products.",
+    "Optimizing performance & user experience.",
   ],
 
   contact: {
-    phone: "+919179909425",
-    email: "ind.kshitijsingh@gmail.com",
+    phone: phone || "unavailable",
+    email: email || "unavailable",
     location: "Bhopal, Madhya Pradesh, India",
     availability: "Open to opportunities",
+    isAvailable: true,
+  },
+about: `
+Software Engineer specializing in full-stack development and applied AI, focused on building scalable, efficient, and reliable systems.
+
+Experienced in developing end-to-end products—from system design to deployment—with strong attention to performance, maintainability, and user experience.
+
+### Key Highlights
+
+- Built AI-powered platforms addressing real-world problems in interview preparation, finance management, and content summarization  
+- Improved system performance through optimized data flow, rendering strategies, and backend integration  
+- Designed modular and scalable architectures for long-term maintainability  
+- Strengthened problem-solving skills through consistent practice of Data Structures and Algorithms  
+
+### Approach
+
+Focused on writing clean, maintainable code and building systems that scale effectively while delivering reliable user experiences.
+
+Interested in solving complex problems and creating impactful technology-driven solutions.
+`,
+
+  resume: {
+    url: "/resume.pdf",
+    fileName: "Kshitij_Singh_Resume.pdf",
+    label: "Download Resume",
+    openInNewTab: true,
+    downloadable: true,
   },
 
-  about: `
-I'm a **Software Developer** focused on building scalable web applications and modern user experiences.
-
-- 🚀 Passionate about full-stack development
-- 🎯 Strong focus on clean UI & performance
-- 💡 Exploring AI-powered applications
-
-I enjoy turning ideas into real products and continuously improving my skills.
-
-You can explore my work on [GitHub](https://github.com/indkshitij) or connect on [LinkedIn](https://linkedin.com/in/kshitijsingh07).
-`,
   site: {
-    url: process.env.APP_URL || "https://yourdomain.com",
-    title: "Kshitij Singh | Software Developer",
-    description: "Portfolio of Kshitij Singh",
-    keywords: ["React", "Next.js", "Full Stack Developer"],
+    url: process.env.APP_URL || "https://kshitij-singh.vercel.app",
+    title: "Kshitij Singh | Full Stack Developer",
+    description:
+      "Portfolio of Kshitij Singh - Full Stack Developer specializing in AI-powered applications",
+    keywords: [
+      "Full Stack Developer",
+      "Next.js",
+      "React",
+      "Node.js",
+      "AI Developer",
+    ],
     ogImage: profile,
   },
 
@@ -63,14 +89,18 @@ You can explore my work on [GitHub](https://github.com/indkshitij) or connect on
 
   education: EDUCATION,
 
-  achievements: ["Solved 200+ DSA problems", "Built multiple full-stack apps"],
+  achievements: [
+    "Solved 200+ DSA problems",
+    "Built 10+ full-stack applications",
+    "Improved performance metrics by 30%",
+  ],
 
   certifications: [
     "Full Stack Web Development",
     "Data Structures & Algorithms",
   ],
 
-  interests: ["AI", "System Design", "UI/UX"],
+  interests: ["AI Systems", "Scalable Backend Design", "UI/UX Engineering"],
 
   branding: {
     username: "indkshitij",

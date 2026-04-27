@@ -41,7 +41,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
   return (
     <Collapsible
       className="relative pb-5 "
-      defaultOpen={index === 0}
+      // defaultOpen={index === 0}
       disabled={!position.description}
     >
       <CollapsibleTrigger
@@ -61,7 +61,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
           <h4 className="flex-1 font-medium text-balance">{position.role}</h4>
 
           {/* Chevron */}
-          <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:size-4">
+          <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:size-4.5">
             <CollapsibleChevronsIcon duration={0.15} />
           </div>
         </div>

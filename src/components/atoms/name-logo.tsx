@@ -22,8 +22,8 @@ const NameLogo = ({
 
   const logoSrc =
     theme === "dark"
-      ? "/webEssential/name-logo-white.png"
-      : "/webEssential/name-logo-black.png";
+      ? "/web-essential/name-logo-white.png"
+      : "/web-essential/name-logo-black.png";
 
   return (
     <div
