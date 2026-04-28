@@ -6,10 +6,10 @@ import {
 import { Skill } from "@/types/skill-type";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Tag } from "@/components/atoms/tag";
 
 export default function SkillCard({ skill }: { skill: Skill }) {
   const { resolvedTheme } = useTheme();
-  const baseClass = "rounded-md select-none corner-squircle";
 
   const src =
     resolvedTheme === "dark"
@@ -17,30 +17,33 @@ export default function SkillCard({ skill }: { skill: Skill }) {
       : skill.lightLogo || skill.logo || skill.darkLogo || "/fallback.svg";
 
   return (
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <a
-          href={skill.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={skill.name}
-          className="group relative transition-all duration-200 hover:scale-105 active:scale-95"
-        >
+    <a
+      href={skill.website}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={skill.name}
+      className="group relative transition-all duration-200 hover:scale-105 active:scale-95"
+    >
+      <Tag
+        variant="default"
+        className="group transition-all duration-200 hover:scale-105 active:scale-95 px-1 py-1"
+      >
+        {/* Icon */}
+        <div className="flex items-center justify-center gap-2">
           <Image
             src={src}
             alt={skill.name}
-            width={38}
-            height={38}
+            width={22}
+            height={22}
             unoptimized
             aria-hidden
-            className={`${baseClass}`}
+            className="rounded-sm"
           />
-        </a>
-      </TooltipTrigger>
 
-      <TooltipContent>
-        <p className="font-medium text-sm">{skill.name}</p>
-      </TooltipContent>
-    </Tooltip>
+          {/* Name */}
+          <span className="text-xs font-mono">{skill.name}</span>
+        </div>
+      </Tag>
+    </a>
   );
 }

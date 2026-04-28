@@ -61,7 +61,7 @@ export function ExperiencePositionItem({ position, index }: Props) {
           <h4 className="flex-1 font-medium text-balance">{position.role}</h4>
 
           {/* Chevron */}
-          <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:size-4.5">
+          <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:size-4">
             <CollapsibleChevronsIcon duration={0.15} />
           </div>
         </div>

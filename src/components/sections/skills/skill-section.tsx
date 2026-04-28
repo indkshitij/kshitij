@@ -17,22 +17,17 @@ const SkillsSection = () => {
       <Separator />
 
       <PageWrapper className="p-2.5 sm:p-5">
-        <TooltipProvider>
-          {SKILLS.length > 0 ? (
-            <div
-              className="flex flex-wrap items-center justify-between gap-4"
-              style={{ padding: "20px 20px" }}
-            >
-              {SKILLS.map((skill) => (
-                <SkillCard key={skill.name} skill={skill} />
-              ))}
-            </div>
-          ) : (
-            <div className="flex items-center justify-center py-10 text-sm text-muted-foreground">
-              No skills found
-            </div>
-          )}
-        </TooltipProvider>
+        {SKILLS.length > 0 ? (
+          <div className="flex flex-wrap items-center justify-start gap-2.5">
+            {SKILLS.map((skill) => (
+              <SkillCard key={skill.name} skill={skill} />
+            ))}
+          </div>
+        ) : (
+          <div className="flex items-center justify-center py-10 text-sm text-muted-foreground font-mono">
+            No skills found
+          </div>
+        )}
       </PageWrapper>
     </>
   );

@@ -65,7 +65,7 @@ const Navbar = () => {
       </div>
 
       {/* ================= MOBILE TOP BAR ================= */}
-      <div className="mt-2.5 md:hidden border-t border-line">
+      <div className="mt-2.5 md:hidden border-y border-line">
         <PageWrapper>
           <div className="flex justify-between items-center py-2">
             {/* left spacer */}

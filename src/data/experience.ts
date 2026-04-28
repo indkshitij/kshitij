@@ -61,7 +61,6 @@ Focused on building modular UI systems, optimizing data flow, and ensuring relia
           "Next.js",
           "TypeScript",
           "Tailwind CSS",
-          "React Query",
           "REST APIs",
         ],
 

@@ -3,6 +3,7 @@
 import {
   BriefcaseBusinessIcon,
   CopyIcon,
+  Download,
   FileIcon,
   GalleryHorizontalEndIcon,
   LayoutGridIcon,
@@ -77,7 +78,8 @@ export type IconName =
   | "leetcode"
   | "twitter"
   | "instagram"
-  | "facebook";
+  | "facebook"
+  | "download";
 
 export interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: number | string;
@@ -576,7 +578,7 @@ export const Icons: Record<string, IconComponent> = {
     </svg>
   ),
 
-  facebook:({ size = 20, className, ...props }) => (
+  facebook: ({ size = 20, className, ...props }) => (
     <svg
       viewBox="0 0 24 24"
       aria-hidden
@@ -586,7 +588,8 @@ export const Icons: Record<string, IconComponent> = {
       {...props}
       fill="currentColor"
     >
-      <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/></svg>
+      <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z" />
+    </svg>
   ),
   linkedin: ({ size = 20, className, ...props }) => (
     <svg
@@ -1058,6 +1061,22 @@ export const Icons: Record<string, IconComponent> = {
       />
     </svg>
   ),
+  download: ({ size = 20, className, ...props }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden
+      width={size}
+      height={size}
+      className={className}
+      {...props}
+    >
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7 10 12 15 17 10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
+    </svg>
+  ),
   favourite: ({ size = 20, className, ...props }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -1302,5 +1321,5 @@ export const getIconName = (title: string): IconName => {
   if (t.includes("facebook")) return "facebook";
   if (t.includes("leetcode")) return "leetcode";
 
-  return "link"; 
+  return "link";
 };
