@@ -5,7 +5,7 @@ import PageWrapper from "@/components/layout/page-wrapper";
 import SKILLS from "@/data/skills";
 import SkillCard from "@/components/sections/skills/skill-card";
 import { Separator } from "@/components/ui/separator";
-import { TooltipProvider } from "@/components/ui/tooltip";
+
 
 const SkillsSection = () => {
   return (

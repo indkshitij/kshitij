@@ -40,7 +40,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: facebook,
     title: "Facebook",
-    subtitle: "Kshitij Singh", // optional
+    subtitle: "Kshitij Singh", 
     href: "https://www.facebook.com/profile.php?id=100092386129471",
   },
 

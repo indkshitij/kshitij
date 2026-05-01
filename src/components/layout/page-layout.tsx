@@ -70,7 +70,7 @@
             duration: 0.25,
             ease: "easeOut",
           }}
-          className="fixed bg-white bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-4 sm:right-6 z-[9999]"
+          className="fixed  bottom-[calc(1.5rem+env(safe-area-inset-bottom))] right-6 sm:right-10 z-9999"
         >
           <BackToTop />
         </motion.div>
