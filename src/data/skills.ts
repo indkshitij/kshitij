@@ -225,7 +225,7 @@ export const SKILLS: Skill[] = [
 
   // Realtime / Communication
   {
-    name: "Socket.IO",
+    name: "Socket IO",
     logo: "/techStack/socketio.png",
     website: "https://socket.io",
     description:
