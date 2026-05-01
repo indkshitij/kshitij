@@ -200,4 +200,51 @@ Built for reliability, scalability, and efficient handling of large datasets.
 Designed as a scalable data pipeline with emphasis on reliability, modularity, and efficient database interaction for production-ready usage.
 `,
   },
+  {
+    title: "Map Navigator (C++ Shortest Path Finder)",
+    tagline: "Graph-based navigation system using Dijkstra’s algorithm",
+
+    shortDescription:
+      "C++ application that computes shortest paths between locations using graph traversal.",
+
+    techUsed: ["C++", "STL", "Graphs", "Dijkstra Algorithm"],
+
+    github: "https://github.com/indkshitij/map-navigator",
+
+    media: [{ type: "image", url: "/projects/map-navigator-1.png" }],
+
+    description: `
+Graph-based navigation system implemented in C++ that models locations as nodes and distances as weighted edges.
+
+Uses a simplified version of Dijkstra’s algorithm to compute the shortest path between two points, along with path reconstruction.
+
+### Key Highlights
+
+- Implemented shortest path computation using Dijkstra-like approach  
+- Designed custom graph structure using a Place class  
+- Built path reconstruction logic using parent tracking  
+- Utilized STL containers for efficient data handling  
+
+### Features
+
+- Graph representation with nodes and weighted edges  
+- Shortest path calculation between source and destination  
+- Path reconstruction in correct traversal order  
+- Modular design using object-oriented principles  
+- Efficient use of unordered_map, set, and vector  
+
+### Approach
+
+Focused on building a clear and educational implementation of graph traversal and shortest path algorithms.
+
+Balanced simplicity with functionality by avoiding complex abstractions while still demonstrating core algorithmic concepts.
+
+### Concepts Demonstrated
+
+- Graph data structures  
+- Shortest path algorithms (Dijkstra’s approach)  
+- C++ Standard Template Library (STL)  
+- Object-oriented programming  
+`,
+  },
 ];

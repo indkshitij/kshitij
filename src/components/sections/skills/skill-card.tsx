@@ -1,8 +1,4 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
 import { Skill } from "@/types/skill-type";
 import Image from "next/image";
 import { useTheme } from "next-themes";

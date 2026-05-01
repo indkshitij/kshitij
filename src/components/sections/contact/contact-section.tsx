@@ -7,7 +7,7 @@ const ContactSection = () => {
   return (
     <div>
       <PageWrapper>
-        <SectionHeading title="Contact" />
+        <SectionHeading title="Let’s Work Together" />
       </PageWrapper>
       <Separator />
       <PageWrapper>

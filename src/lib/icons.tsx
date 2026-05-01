@@ -3,7 +3,6 @@
 import {
   BriefcaseBusinessIcon,
   CopyIcon,
-  Download,
   FileIcon,
   GalleryHorizontalEndIcon,
   LayoutGridIcon,

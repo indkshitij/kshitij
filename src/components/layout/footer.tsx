@@ -3,15 +3,15 @@
 import PageWrapper from "@/components/layout/page-wrapper";
 import { personalData } from "@/data/personal-data";
 import Icon, { getIconName } from "@/lib/icons";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import ResumeButton from "../atoms/resume-button";
+import ResumeButton from "@/components/atoms/resume-button";
 import BackToTop from "@/components/atoms/back-to-top";
+import { ArrowUp } from "lucide-react";
+import BigGradientText from "@/components/atoms/big-gradient-text";
 
 const Footer = () => {
   return (
@@ -33,8 +33,8 @@ const Footer = () => {
               </p>
             </div>
 
-            {/* SOCIALS (improved) */}
-            <div className="flex items-center gap-4">
+            {/* SOCIALS */}
+            <div className="flex items-center gap-2 md:gap-4 flex-wrap">
               {personalData.socials.map((s, idx) => (
                 <Tooltip key={idx}>
                   <TooltipTrigger asChild>
@@ -67,7 +67,9 @@ const Footer = () => {
               <BackToTop showTooltip={false}>
                 <div className="flex items-center gap-1 text-xs text-muted-foreground/60 hover:text-foreground transition">
                   <span>Back to top</span>
-                  <span className="translate-y-[1px]">↑</span>
+                  <span className="translate-y-px">
+                    <ArrowUp />
+                  </span>
                 </div>
               </BackToTop>
             </div>
@@ -95,28 +97,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-const BigGradientText = ({ text }: { text: string }) => {
-  return (
-    <>
-      {/* ================= BIG TEXT ================= */}
-      <div className="relative h-20 sm:h-35  md:h-45 lg:h-64 w-full overflow-hidden mt-5 ">
-        <p
-          className={cn(
-            "pointer-events-none select-none text-center font-black",
-            "text-[90px] sm:text-[200px] md:text-[240px] lg:text-[280px] xl:text-[300px]",
-            "leading-none tracking-tight",
-            "bg-gradient-to-b from-foreground/15 via-foreground/10 to-transparent",
-            "dark:from-white/15 dark:via-white/10",
-            "bg-clip-text text-transparent",
-            "[mask-image:linear-gradient(to_bottom,black,transparent)]",
-            "absolute top-0 left-1/2 -translate-x-1/2",
-          )}
-        >
-          {text}
-        </p>
-      </div>
-    </>
-  );
-};

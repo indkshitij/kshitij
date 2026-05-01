@@ -13,7 +13,7 @@ import { ReactNode } from "react";
 
 type BackToTopProps = {
   className?: string;
-  children?: ReactNode; // ✅ custom UI
+  children?: ReactNode; // custom UI
   showTooltip?: boolean;
   tooltipText?: string;
 };
@@ -38,7 +38,7 @@ const BackToTop = ({
       className={cn(
         "group relative flex items-center justify-center h-9 w-9 sm:h-10 sm:w-10",
         "rounded-full border border-black/10 dark:border-white/10",
-        "bg-black/[0.03] dark:bg-white/[0.04]",
+        "bg-white/80 dark:bg-black/80 backdrop-blur-md",
         "text-muted-foreground hover:text-foreground",
         "transition-all duration-300 ease-out",
         "hover:scale-110 hover:bg-black/[0.06] dark:hover:bg-white/[0.08]",

@@ -62,8 +62,8 @@ const HeroCard = () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      let moveX = (centerX - x) / strength;
-      let moveY = (centerY - y) / strength;
+      const moveX = (centerX - x) / strength;
+      const moveY = (centerY - y) / strength;
 
       targetX = Math.max(-maxMove, Math.min(maxMove, moveX));
       targetY = Math.max(-maxMove, Math.min(maxMove, moveY));

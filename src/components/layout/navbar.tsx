@@ -89,24 +89,33 @@ const Navbar = () => {
                   </button>
                 </DropdownMenuTrigger>
 
-                <DropdownMenuContent align="end" className="w-48 mt-2 p-2.5">
-                  {NAV_LINK.map((link) => {
-                    const isActive = pathname === link.href;
+                <DropdownMenuContent
+                  align="end"
+                  className="w-64 mt-2 rounded-lg bg-popover p-3 shadow-xl animate-in fade-in zoom-in-95"
+                >
+                  <div className="flex flex-col gap-1.5">
+                    {NAV_LINK.map((link) => {
+                      const isActive = pathname === link.href;
 
-                    return (
-                      <DropdownMenuItem key={link.name} asChild>
-                        <Link
-                          href={link.href}
-                          className={clsx(
-                            "text-sm cursor-pointer",
-                            isActive && "text-foreground font-semibold",
-                          )}
-                        >
-                          {link.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    );
-                  })}
+                      return (
+                        <DropdownMenuItem key={link.name} asChild>
+                          <Link
+                            href={link.href}
+                            className={clsx(
+                              "flex items-center rounded-lg px-4 py-3 text-sm transition-all duration-150",
+                              "hover:bg-accent hover:text-accent-foreground",
+                              "focus:bg-accent focus:text-accent-foreground outline-none",
+                              isActive
+                                ? "bg-accent text-foreground font-medium"
+                                : "text-muted-foreground",
+                            )}
+                          >
+                            {link.name}
+                          </Link>
+                        </DropdownMenuItem>
+                      );
+                    })}
+                  </div>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

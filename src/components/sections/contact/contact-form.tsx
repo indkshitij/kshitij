@@ -38,7 +38,7 @@ export default function ContactForm() {
   });
   const onSubmit = async (data: ContactFormData) => {
     playPing();
-    setSuccess(false); // reset before request
+    setSuccess(false);
 
     try {
       const res = await fetch("/api/contact", {
@@ -48,12 +48,11 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error();
 
-      toast.success("Message sent. I will respond shortly.");
+      toast.success("Message sent successfully. I’ll get back to you soon.");
 
-      setSuccess(true); // 🎉 trigger confetti
+      setSuccess(true);
       reset();
 
-      // optional: reset success after animation
       setTimeout(() => setSuccess(false), 1500);
     } catch {
       toast.error("Unable to send your message. Please try again.");
@@ -61,111 +60,118 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="group">
-      <div className="space-y-10 sm:space-y-16 px-3 sm:px-10 pt-10 sm:pt-8 mx-auto">
-        {/* Name */}
-        <Controller
-          name="name"
-          control={control}
-          render={({ field }) => (
-            <FloatingInput
-              {...field}
-              label="Your Name"
-              disabled={isSubmitting}
-              error={errors.name?.message}
-              onChange={(e) => {
-                playTyping();
-                field.onChange(e);
-              }}
-              required
-            />
-          )}
-        />
+    <>
+      <div className="p-2.5 sm:p-4">
+        <p className="prose prose-sm prose-stone max-w-none leading-relax text-muted-foreground">
+          Have a project, idea, or opportunity in mind? I build real-world, scalable solutions and am currently open to freelance and full-time opportunities. Whether you're starting something new or improving an existing product, I focus on creating clean, high-performance systems with great user experience. Let&apos;s connect and turn your ideas into something meaningful.
+        </p>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="group">
+        <div className="space-y-10 sm:space-y-16 px-3 sm:px-10 pt-10 sm:pt-8 mx-auto">
+          {/* Name */}
+          <Controller
+            name="name"
+            control={control}
+            render={({ field }) => (
+              <FloatingInput
+                {...field}
+                label="Your Name"
+                disabled={isSubmitting}
+                error={errors.name?.message}
+                onChange={(e) => {
+                  playTyping();
+                  field.onChange(e);
+                }}
+                required
+              />
+            )}
+          />
 
-        <div className="grid sm:grid-cols-5 gap-6">
-          {/* Email */}
-          <div className="col-span-3">
-            <Controller
-              name="email"
-              control={control}
-              render={({ field }) => (
-                <FloatingInput
-                  {...field}
-                  label="Email"
-                  //   type="email"
-                  disabled={isSubmitting}
-                  error={errors.email?.message}
-                  onChange={(e) => {
-                    playTyping();
-                    field.onChange(e);
-                  }}
-                  required
-                />
-              )}
-            />
+          <div className="grid sm:grid-cols-5 gap-6">
+            {/* Email */}
+            <div className="col-span-3">
+              <Controller
+                name="email"
+                control={control}
+                render={({ field }) => (
+                  <FloatingInput
+                    {...field}
+                    label="Your Email"
+                    type="email"
+                    disabled={isSubmitting}
+                    error={errors.email?.message}
+                    onChange={(e) => {
+                      playTyping();
+                      field.onChange(e);
+                    }}
+                    required
+                  />
+                )}
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="col-span-2">
+              <Controller
+                name="phone"
+                control={control}
+                render={({ field }) => (
+                  <FloatingPhoneInput
+                    {...field}
+                    label={"Your Phone Number"}
+                    disabled={isSubmitting}
+                    error={errors.phone?.message}
+                    onChange={(value) => field.onChange(value || "")}
+                  />
+                )}
+              />
+            </div>
           </div>
 
-          {/* Phone */}
-          <div className="col-span-2">
-            <Controller
-              name="phone"
-              control={control}
-              render={({ field }) => (
-                <FloatingPhoneInput
-                  {...field}
-                  label={"Mobile Number"}
-                  disabled={isSubmitting}
-                  error={errors.phone?.message}
-                  onChange={(value) => field.onChange(value || "")}
-                />
-              )}
-            />
-          </div>
+          {/* Subject */}
+          <Controller
+            name="subject"
+            control={control}
+            render={({ field }) => (
+              <FloatingInput
+                {...field}
+                label="Project / Idea"
+                disabled={isSubmitting}
+                error={errors.subject?.message}
+                onChange={(e) => {
+                  playTyping();
+                  field.onChange(e);
+                }}
+                required
+              />
+            )}
+          />
+
+          {/* Message */}
+          <Controller
+            name="message"
+            control={control}
+            render={({ field }) => (
+              <FloatingTextarea
+                {...field}
+                label="Your Message..."
+                disabled={isSubmitting}
+                error={errors.message?.message}
+                onChange={(e) => {
+                  playTyping();
+                  field.onChange(e);
+                }}
+                required
+              />
+            )}
+          />
         </div>
 
-        {/* Subject */}
-        <Controller
-          name="subject"
-          control={control}
-          render={({ field }) => (
-            <FloatingInput
-              {...field}
-              label="Subject"
-              disabled={isSubmitting}
-              error={errors.subject?.message}
-              onChange={(e) => {
-                playTyping();
-                field.onChange(e);
-              }}
-              required
-            />
-          )}
-        />
-
-        {/* Message */}
-        <Controller
-          name="message"
-          control={control}
-          render={({ field }) => (
-            <FloatingTextarea
-              {...field}
-              label="Write your message..."
-              disabled={isSubmitting}
-              error={errors.message?.message}
-              onChange={(e) => {
-                playTyping();
-                field.onChange(e);
-              }}
-              required
-            />
-          )}
-        />
-      </div>
-
-      {/* Button */}
-      <div className="border-t mt-4 sm:mt-10 border-line flex justify-center py-2.5 sm:py-5">
-        <MessageSendButton loading={isSubmitting} success={success} />
-      </div>
-    </form>
+        {/* Button */}
+        <div className="border-t mt-4 sm:mt-10 border-line flex justify-center py-2.5 sm:py-5">
+          <MessageSendButton loading={isSubmitting} success={success} />
+        </div>
+      </form>
+    </>
   );
 }
