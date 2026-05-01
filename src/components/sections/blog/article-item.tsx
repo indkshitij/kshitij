@@ -18,8 +18,7 @@ export function ArticleItem({ title, coverUrl, createdAt }: ArticleItemProps) {
             alt={title}
             width={300}
             height={400}
-            priority
-            loading="eager"
+            loading="lazy"
           />
           <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-black/10 ring-inset dark:ring-white/15" />
         </div>
