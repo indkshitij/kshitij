@@ -17,7 +17,7 @@ import {
 } from "geist/font/pixel";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: {
