@@ -17,6 +17,7 @@ import {
 } from "geist/font/pixel";
 
 import { NuqsAdapter } from "nuqs/adapters/next/app";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -59,20 +60,39 @@ export default function RootLayout({
         suppressHydrationWarning={true}
         className="min-h-full flex flex-col antialiased"
       >
-        <SpeedInsights />
-
+        {/* Theme provider controls dark/light mode across app */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
+          {/* Enables query-state syncing in Next.js app router */}
           <NuqsAdapter>
+            {/* Tooltip system */}
             <TooltipProvider>
+              {/* Global app state provider */}
               <AppProvider>
+                {/* Toast notifications (top-center position) */}
                 <Toaster position="top-center" />
+
+                {/* Global keyboard shortcuts handler */}
                 <Hotkeys />
+                {/* Main app content */}
                 {children}
+                {/* 
+                  Vercel Analytics:
+                  - Tracks page views, visitors, referrers
+                  - Lightweight, automatic
+                */}
+                <Analytics />
+
+                {/* 
+                  Vercel Speed Insights:
+                  - Tracks performance (LCP, CLS, etc.)
+                  - Helps optimize real-world loading speed
+                */}
+                <SpeedInsights />
               </AppProvider>
             </TooltipProvider>
           </NuqsAdapter>

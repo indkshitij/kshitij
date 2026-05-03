@@ -137,10 +137,10 @@ export const SKILLS: Skill[] = [
   },
   {
     name: "React Router",
-    
-      lightLogo: "/techStack/reactrouter.svg",
-      darkLogo: "/techStack/react-router-dark.svg",
-    
+
+    lightLogo: "/techStack/reactrouter.svg",
+    darkLogo: "/techStack/react-router-dark.svg",
+
     website: "https://reactrouter.com",
     description:
       "Routing library for handling navigation in React applications.",
@@ -150,7 +150,8 @@ export const SKILLS: Skill[] = [
   // UI Libraries
   {
     name: "shadcn/ui",
-    lightLogo:"/techStack/shadcnui.svg",darkLogo:"/techStack/shadcn-dark.png",
+    lightLogo: "/techStack/shadcnui.svg",
+    darkLogo: "/techStack/shadcn-dark.png",
     website: "https://ui.shadcn.com",
     description:
       "Accessible and customizable UI components built with Radix and Tailwind.",
@@ -199,7 +200,7 @@ export const SKILLS: Skill[] = [
   // Animation
   {
     name: "Framer Motion",
-    logo:"/techStack/framer.png",
+    logo: "/techStack/framer.png",
     website: "https://www.framer.com/motion/",
     description: "Animation library for React with powerful gesture support.",
     tags: ["frontend"],
@@ -227,6 +228,8 @@ export const SKILLS: Skill[] = [
   {
     name: "Socket IO",
     logo: "/techStack/socketio.png",
+    lightLogo: "/techStack/socketio.png",
+    darkLogo: "/techStack/socketio.png",
     website: "https://socket.io",
     description:
       "Library for real-time, bidirectional communication between client and server.",
@@ -267,10 +270,10 @@ export const SKILLS: Skill[] = [
   },
   {
     name: "GitHub",
-    
-      lightLogo: "/techStack/github.svg",
-      darkLogo: "/techStack/github-dark.png",
-    
+
+    lightLogo: "/techStack/github.svg",
+    darkLogo: "/techStack/github-dark.png",
+
     website: "https://github.com",
     description: "Platform for hosting and collaborating on code.",
     tags: ["tool"],
@@ -364,10 +367,10 @@ export const SKILLS: Skill[] = [
   // Deployment / Platforms
   {
     name: "Vercel",
-    
-      lightLogo: "/techStack/vercel.png",
-      darkLogo: "/techStack/vercellogo-dark.png",
-    
+
+    lightLogo: "/techStack/vercel.png",
+    darkLogo: "/techStack/vercellogo-dark.png",
+
     website: "https://vercel.com",
     description:
       "Platform for deploying frontend frameworks and serverless applications.",
@@ -375,10 +378,10 @@ export const SKILLS: Skill[] = [
   },
   {
     name: "Render",
-    
-      lightLogo: "/techStack/render.jpeg",
-      darkLogo: "/techStack/render.jpeg",
-    
+
+    lightLogo: "/techStack/render.jpeg",
+    darkLogo: "/techStack/render.jpeg",
+
     website: "https://render.com",
     description:
       "Cloud platform for hosting web services, APIs, and databases.",

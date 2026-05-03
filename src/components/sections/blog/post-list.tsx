@@ -21,7 +21,7 @@ export function PostList({ posts }: { posts: BlogPost[] }) {
             <PostItem
               key={post.slug}
               post={post}
-              imageLoading={index <= 3 ? "eager" : "lazy"}
+              // imageLoading={index <= 3 ? "eager" : "lazy"}
             />
           ))}
 
